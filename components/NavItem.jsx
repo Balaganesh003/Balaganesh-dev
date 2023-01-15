@@ -5,7 +5,7 @@ const NavItem = ({ text }) => {
     <div>
       <li
         className="flex space-x-2
-         items-center h-12 px-1 py-2 cursor-pointer group ">
+         items-center  px-1 py-2 cursor-pointer group ">
         <p className="font-extrabold text-transparent  text-2xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 opacity-0 group-hover:animate-giggleLeft group-hover:opacity-100 ">
           &lt;
         </p>

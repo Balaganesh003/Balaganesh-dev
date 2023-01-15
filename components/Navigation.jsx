@@ -25,9 +25,11 @@ const Navigation = () => {
       <div className="md:hidden w-screen h-screen bg-slate-500">
         {/* Logo */}
         <div>
-          <div className="cursor-pointer flex mx-5 my-6 justify-between">
-            <Image src="/logo.svg" alt="My Logo" width={24} height={24} />
-            <button>
+          <div className=" flex mx-5 my-6 justify-between">
+            <div className="cursor-pointer">
+              <Image src="/logo.svg" alt="My Logo" width={24} height={24} />
+            </div>
+            <button className="cursor-pointer">
               {isOpen ? (
                 <MdClear
                   onClick={() => setIsOpen(!isOpen)}
