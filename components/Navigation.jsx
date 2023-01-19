@@ -22,9 +22,9 @@ const Navigation = () => {
         </ul>
       </div>
       {/* Mobile */}
-      <div className="md:hidden w-screen h-screen bg-slate-500">
+      <div className="md:hidden w-[60%] absolute  inset-y-0 right-0 transition-all ease-in-out ab h-screen backdrop:blur-xl bg-slate-500">
         {/* Logo */}
-        <div>
+        <div className="relative">
           <div className=" flex mx-5 my-6 justify-between">
             <div className="cursor-pointer">
               <Image src="/logo.svg" alt="My Logo" width={24} height={24} />
@@ -45,7 +45,13 @@ const Navigation = () => {
           </div>
         </div>
         {/* Nav Items */}
-        <div></div>
+        <div>
+          <ul className="flex flex-col items-center gap-5 justify-center">
+            {navItems.map((item, index) => (
+              <NavItem key={index} text={item} />
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
