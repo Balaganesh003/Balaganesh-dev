@@ -22,35 +22,42 @@ const Navigation = () => {
         </ul>
       </div>
       {/* Mobile */}
-      <div className="md:hidden w-[60%] absolute  inset-y-0 right-0 transition-all ease-in-out ab h-screen backdrop:blur-xl bg-slate-500">
-        {/* Logo */}
-        <div className="relative">
-          <div className=" flex mx-5 my-6 justify-between">
-            <div className="cursor-pointer">
-              <Image src="/logo.svg" alt="My Logo" width={24} height={24} />
+      <div className="md:hidden top-0 fixed">
+        <div className="relative h-screen">
+          {/* Nav Toggle */}
+          <div className="w-screen flex px-5 py-6 justify-between">
+            {/* Logo */}
+            <div className="cursor-pointer flex items-center justify-center">
+              <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
             </div>
-            <button className="cursor-pointer">
+            {/* Toggle Button */}
+            <button className="cursor-pointer transition-all duration-300 z-30">
               {isOpen ? (
                 <MdClear
                   onClick={() => setIsOpen(!isOpen)}
-                  className="text-white text-3xl"
+                  className="text-white text-4xl"
                 />
               ) : (
                 <MdSegment
                   onClick={() => setIsOpen(!isOpen)}
-                  className="text-white text-3xl"
+                  className="text-white text-4xl"
                 />
               )}
             </button>
           </div>
-        </div>
-        {/* Nav Items */}
-        <div>
-          <ul className="flex flex-col items-center gap-5 justify-center">
-            {navItems.map((item, index) => (
-              <NavItem key={index} text={item} />
-            ))}
-          </ul>
+          {/* Nav Items */}
+          <div
+            className={`w-[60%] h-screen absolute inset-y-0 ${
+              isOpen ? 'right-0' : '-right-[20rem]'
+            }   transition-all duration-300 ease-in-out bg-slate-500`}>
+            <div className="flex mt-24 justify-center">
+              <ul className="flex flex-col items-center gap-5 justify-center">
+                {navItems.map((item, index) => (
+                  <NavItem key={index} text={item} />
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
