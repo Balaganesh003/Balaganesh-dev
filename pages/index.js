@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import styles from '@/styles/Home.module.css';
 import Navigation from '@/components/Navigation';
+import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,6 +16,8 @@ export default function Home() {
       </Head>
       <main className="bg-primary md:px-16 lg:24 h-screen text-white">
         <Navigation />
+
+        <Header />
       </main>
     </>
   );

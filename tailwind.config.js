@@ -14,7 +14,10 @@ module.exports = {
         bgLightNavy: '#112240',
         textGreen: '#64ffda',
         secondary: 'rgba(0, 212, 255, 1)',
-        headingColor: 'rgba(9, 9, 121, 1)',
+        // headingColor: 'rgba(9, 9, 121, 1)',
+        HeadingBlue: '#07e7ec',
+        headingPurple: '#002ddc',
+        headingColor: '#090e22',
       },
       fontFamily: {
         sans: ['SF Mono'],
