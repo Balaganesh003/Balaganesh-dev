@@ -14,9 +14,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-primary md:px-16 lg:24 h-screen text-white">
+      <main className="bg-primary md:px-16 md:pb-8 lg:pb-12 lg:px-24  text-white">
         <Navigation />
-
         <Header />
       </main>
     </>

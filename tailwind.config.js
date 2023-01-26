@@ -19,6 +19,12 @@ module.exports = {
         headingPurple: '#002ddc',
         headingColor: '#090e22',
       },
+      letterSpacing: {
+        1: '0.25rem',
+        2: '1.25rem',
+        3: '1.5rem',
+        4: '2rem',
+      },
       fontFamily: {
         sans: ['SF Mono'],
       },
