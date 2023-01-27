@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         textSlate: '#8892b0',
         lightSlate: '#ccd6f6',
+        HeadingGray: 'rgb(150,155,165)',
         primary: '#0c1324',
         bgNavy: '#0a192f',
         bgLightNavy: '#112240',
@@ -20,7 +21,7 @@ module.exports = {
         headingColor: '#090e22',
       },
       letterSpacing: {
-        1: '0.25rem',
+        1: '0.18rem',
         2: '1.25rem',
         3: '1.5rem',
         4: '2rem',
