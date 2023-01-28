@@ -1,6 +1,41 @@
 import Head from 'next/head';
 import Navigation from '@/components/Navigation';
 import Header from '@/components/Header';
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaGithub,
+} from 'react-icons/fa';
+
+const links = [
+  {
+    id: 1,
+    Icon: FaWhatsapp,
+    link: 'https://wa.me/919445543026',
+  },
+  {
+    id: 2,
+    Icon: FaInstagram,
+    link: 'https://www.instagram.com/__balaganesh/',
+  },
+  {
+    id: 3,
+    Icon: FaLinkedin,
+    link: 'https://www.linkedin.com/in/balaganesh-k/',
+  },
+  {
+    id: 4,
+    Icon: FaTwitter,
+    link: 'https://twitter.com/balaganesh_003',
+  },
+  {
+    id: 5,
+    Icon: FaGithub,
+    link: 'https://github.com/Balaganesh003',
+  },
+];
 
 export default function Home() {
   return (
@@ -11,12 +46,35 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-primary px-4 md:px-16 md:pb-8 lg:pb-12 lg:px-24  text-white">
-        <header className="h-screen">
-          <Navigation />
-          <Header />
-        </header>
-      </main>
+      <div className="grid grid-flow-col  bg-primary relative">
+        <div className="hidden  fixed justify-end left-5 px-5 md:flex flex-col items-center text-white h-screen  space-y-7">
+          <div className="flex flex-col space-y-7">
+            {links.map((link, index) => (
+              <a key={index} target="_new" href={link.link}>
+                <link.Icon className="text-2xl  transition-all hover:text-secondary duration-200 hover:-translate-y-[2px] hover:scale-105 cursor-pointer" />
+              </a>
+            ))}
+          </div>
+          <div className="w-px bg-white h-[5.5rem]"></div>
+        </div>
+        <main className="bg-primary px-4 md:px-16 md:pb-8 lg:pb-12 lg:px-24  text-white">
+          <header className="h-screen">
+            <Navigation />
+            <Header />
+          </header>
+        </main>
+        <div className="hidden fixed px-5 right-5 md:flex flex-col items-center text-white h-screen justify-end space-y-24">
+          <div className="rotate-90 mb-20 w-10 py-[2.9rem] ">
+            <a
+              href="mailto:k.balaganesh26@gmail.com"
+              target="_new"
+              className="tracking-2 inline-block hover:-translate-x-1 transition-all duration-200 cursor-pointer hover:text-secondary">
+              k.balaganesh26@gmail.com
+            </a>
+          </div>
+          <div className="w-px bg-white h-[5.5rem]"></div>
+        </div>
+      </div>
     </>
   );
 }

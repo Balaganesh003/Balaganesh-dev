@@ -48,7 +48,7 @@ const Navigation = () => {
           {/* Nav Items */}
           <div
             className={`w-[60%] h-screen absolute inset-y-0 ${
-              isOpen ? 'right-0' : '-right-[20rem]'
+              isOpen ? 'right-0' : '-right-[50rem]'
             }   transition-all duration-300 ease-in-out bg-slate-500`}>
             <div className="flex mt-24 justify-center">
               <ul className="flex flex-col items-center gap-5 justify-center">

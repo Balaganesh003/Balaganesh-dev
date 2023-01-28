@@ -21,16 +21,7 @@ const Header = () => {
         <p className="font-extrabold  text-transparent text-[2.8rem] lg:text-[4rem] bg-clip-text bg-gradient-to-r from-HeadingBlue to-headingPurple  leading-tight">
           I am a Frontend Developer
         </p>
-        <div className="flex flex-row gap-4 mt-2">
-          {icons.map((Icon, index) => (
-            <Icon
-              key={index}
-              className="text-2xl md:text-3xl cursor-pointer hover:text-textGreen transition-all duration-200 hover:scale-[115%] active:scale-[100%]"
-            />
-          ))}
-        </div>
       </div>
-      <hr className="h-px mt-[10%] bg-gray-200 border-0 dark:bg-gray-700" />
     </div>
   );
 };
