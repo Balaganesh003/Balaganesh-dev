@@ -46,6 +46,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <div className="grid grid-flow-col  bg-primary relative">
         <div className="hidden  fixed justify-end left-5 px-5 md:flex flex-col items-center text-white h-screen  space-y-7">
           <div className="flex flex-col space-y-7">
@@ -57,18 +58,22 @@ export default function Home() {
           </div>
           <div className="w-px bg-white h-[5.5rem]"></div>
         </div>
+        {/* Main */}
         <main className="bg-primary px-4 md:px-16 md:pb-8 lg:pb-12 lg:px-24  text-white">
-          <header className="h-screen">
-            <Navigation />
+          <div className="h-screen flex flex-col justify-center items-center">
+            <div className="fixed inset-x-0 top-0">
+              <Navigation />
+            </div>
             <Header />
-          </header>
+          </div>
         </main>
-        <div className="hidden fixed px-5 right-5 md:flex flex-col items-center text-white h-screen justify-end space-y-24">
+        {/* Mail  */}
+        <div className="hidden fixed pr-5 right-5 md:flex flex-col items-center text-white h-screen justify-end  space-y-24">
           <div className="rotate-90 mb-20 w-10 py-[2.9rem] ">
             <a
               href="mailto:k.balaganesh26@gmail.com"
               target="_new"
-              className="tracking-2 inline-block hover:-translate-x-1 transition-all duration-200 cursor-pointer hover:text-secondary">
+              className="tracking-2 inline-block hover:-translate-x-1 transition-all  duration-200 cursor-pointer hover:text-secondary">
               k.balaganesh26@gmail.com
             </a>
           </div>
