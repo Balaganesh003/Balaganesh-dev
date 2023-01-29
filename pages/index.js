@@ -48,7 +48,7 @@ export default function Home() {
       </Head>
 
       <div className="grid grid-flow-col  bg-primary relative">
-        <div className="hidden  fixed justify-end left-5 px-5 md:flex flex-col items-center text-white h-screen  space-y-7">
+        <div className="hidden  fixed justify-end left-5 px-8 md:flex flex-col items-center text-white h-screen  space-y-7">
           <div className="flex flex-col space-y-7">
             {links.map((link, index) => (
               <a key={index} target="_new" href={link.link}>
@@ -59,7 +59,7 @@ export default function Home() {
           <div className="w-px bg-white h-[5.5rem]"></div>
         </div>
         {/* Main */}
-        <main className="bg-primary px-4 md:px-16 md:pb-8 lg:pb-12 lg:px-24  text-white">
+        <main className="bg-primary px-5 md:px-16 md:pb-8 lg:pb-12 lg:px-24  text-white">
           <div className="h-screen flex flex-col justify-center items-center">
             <div className="fixed inset-x-0 top-0">
               <Navigation />

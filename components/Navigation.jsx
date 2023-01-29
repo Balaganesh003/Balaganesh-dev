@@ -10,7 +10,7 @@ const Navigation = () => {
 
   return (
     <div className="">
-      <div className="hidden md:flex items-center justify-between py-7 bg-primary w-screen px-[2.5rem] pr-[3.5rem] ">
+      <div className="hidden md:flex items-center justify-between py-7 bg-primary w-screen px-[3.5rem]  ">
         {/* Desktop */}
         <div className="cursor-pointer mt-1">
           <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
