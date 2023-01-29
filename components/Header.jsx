@@ -1,14 +1,4 @@
 import React from 'react';
-import Navigation from './Navigation';
-import {
-  FaWhatsapp,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaGithub,
-} from 'react-icons/fa';
-
-const icons = [FaWhatsapp, FaInstagram, FaLinkedin, FaTwitter, FaGithub];
 
 const Header = () => {
   return (
