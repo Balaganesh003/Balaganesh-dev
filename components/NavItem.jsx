@@ -1,8 +1,8 @@
 import React from 'react';
 
-const NavItem = ({ text }) => {
+const NavItem = ({ text, toggleNav }) => {
   return (
-    <div>
+    <div onClick={toggleNav}>
       <li
         className="flex space-x-2
          items-center  px-1 py-2 cursor-pointer group ">
