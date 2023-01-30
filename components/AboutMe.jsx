@@ -1,10 +1,9 @@
 import React from 'react';
-import Image from 'next/image';
 
 const AboutMe = () => {
   return (
-    <div className="flex ">
-      <div className="flex-1  flex   ">
+    <div className="flex flex-col md:flex-row">
+      <div className="flex-1 flex">
         <div className="bg-gradient-to-r from-headingPurple/5 to-headingPurple/50  rounded-lg h-[25rem] flex">
           <img src="/My-img.png" alt="My Logo" className="mb-5" />
         </div>
