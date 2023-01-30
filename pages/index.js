@@ -8,6 +8,7 @@ import {
   FaTwitter,
   FaGithub,
 } from 'react-icons/fa';
+import AboutMe from '@/components/AboutMe';
 
 const links = [
   {
@@ -59,13 +60,14 @@ export default function Home() {
           <div className="w-px bg-white h-[5.5rem]"></div>
         </div>
         {/* Main */}
-        <main className="bg-primary px-5 md:px-16 md:pb-8 lg:pb-12 lg:px-24  text-white">
-          <div className="h-screen flex flex-col justify-center items-center">
-            <div className="fixed inset-x-0 top-0">
+        <main className="bg-primary mx-auto my-auto px-5 md:px-32 md:pb-8 lg:pb-12 lg:px-32  text-white ">
+          <div className="h-screen flex flex-col justify-center">
+            <div className="fixed inset-x-0 top-0 ">
               <Navigation />
             </div>
             <Header />
           </div>
+          <AboutMe />
         </main>
         {/* Mail  */}
         <div className="hidden fixed pr-5 right-5 md:flex flex-col items-center text-white h-screen justify-end  space-y-24">
