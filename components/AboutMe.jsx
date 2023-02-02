@@ -39,15 +39,11 @@ const AboutMe = () => {
             I am always eager to expand my skillset and welcome new and
             challenging projects.
           </p>
-
-          <button className="py-3 px-6 mt-8 border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95 ">
-            <a
-              className="flex items-center justify-center gap-3"
-              href="https://github.com/Balaganesh003"
-              target="_new">
+          <a href="https://github.com/Balaganesh003" target="_new">
+            <button className="py-3 px-6 mt-8 border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95 flex items-center justify-center gap-3">
               <FaGithub /> My github
-            </a>
-          </button>
+            </button>
+          </a>
         </div>
       </div>
     </>
