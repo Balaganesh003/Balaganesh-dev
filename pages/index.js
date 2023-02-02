@@ -9,6 +9,7 @@ import {
   FaGithub,
 } from 'react-icons/fa';
 import AboutMe from '@/components/AboutMe';
+import Skills from '@/components/Skills';
 
 const links = [
   {
@@ -67,8 +68,10 @@ export default function Home() {
             </div>
             <Header />
           </div>
-          <hr className="h-px mx-auto mb-10 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+          <hr className="h-px mx-auto mb-10 md:mb-14 lg:mb-20 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <AboutMe />
+          <hr className="h-px mx-auto my-16 md:my-14 lg:mt-24 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+          <Skills />
         </main>
         {/* Mail  */}
         <div className="hidden fixed pr-5 right-5 md:flex flex-col items-center text-white h-screen justify-end  space-y-24">
