@@ -18,6 +18,8 @@ module.exports = {
         // headingColor: 'rgba(9, 9, 121, 1)',
         HeadingBlue: '#07e7ec',
         headingPurple: '#002ddc',
+        primaryPurple: '#b20fe7',
+        secondaryPurple: '#5d00ff',
         headingColor: '#090e22',
       },
       letterSpacing: {

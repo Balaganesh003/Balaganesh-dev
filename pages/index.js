@@ -67,6 +67,7 @@ export default function Home() {
             </div>
             <Header />
           </div>
+          <hr className="h-px mx-auto mb-10 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <AboutMe />
         </main>
         {/* Mail  */}
