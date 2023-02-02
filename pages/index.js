@@ -60,7 +60,7 @@ export default function Home() {
           <div className="w-px bg-white h-[5.5rem]"></div>
         </div>
         {/* Main */}
-        <main className="bg-primary mx-auto my-auto px-5 md:px-32 md:pb-8 lg:pb-12 lg:px-32  text-white ">
+        <main className="bg-primary mx-auto my-auto px-5 md:px-32 pb-12 lg:px-32  text-white ">
           <div className="h-screen flex flex-col justify-center">
             <div className="fixed inset-x-0 top-0 ">
               <Navigation />

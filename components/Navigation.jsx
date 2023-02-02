@@ -32,7 +32,7 @@ const Navigation = () => {
       <div className="md:hidden top-0 fixed">
         <div className="relative h-screen">
           {/* Nav Toggle */}
-          <div className="w-screen flex px-5 py-6 justify-between">
+          <div className="w-screen bg-primary flex px-5 py-6 justify-between">
             {/* Logo */}
             <div className="cursor-pointer flex items-center justify-center">
               <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
