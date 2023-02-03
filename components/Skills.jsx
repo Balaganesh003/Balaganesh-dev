@@ -1,21 +1,17 @@
 import React from 'react';
+import Skill from './Skill';
 
 const skillList = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'React',
-  'Redux',
-  'Next.js',
-  'Tailwind CSS',
-  'Bootstrap',
-  'Python',
-  'Flask',
-  'Git',
-  'GitHub',
-  'Firebase',
-  'Figma',
-  'Sanity',
+  { skillname: 'HTML', percentage: 95 },
+  { skillname: 'CSS', percentage: 75 },
+  { skillname: 'Javascript', percentage: 75 },
+  { skillname: 'React Js', percentage: 60 },
+  { skillname: 'Next Js', percentage: 60 },
+  { skillname: 'Tailwind', percentage: 55 },
+  { skillname: 'Bootstrap', percentage: 35 },
+  { skillname: 'Firebase', percentage: 35 },
+  { skillname: 'Sanity', percentage: 35 },
+  { skillname: 'Python', percentage: 60 },
 ];
 
 const Skills = () => {
@@ -24,11 +20,13 @@ const Skills = () => {
       <h1 className="uppercase text-HeadingGray text-xl text-center my-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
         Skills
       </h1>
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
         {skillList.map((skill, index) => (
-          <div key={index} className="flex items-center justify-center">
-            <p className="text-[1.2rem] ml-2">{skill.name}</p>
-          </div>
+          <Skill
+            key={index}
+            skillname={skill.skillname}
+            percentage={skill.percentage}
+          />
         ))}
       </div>
     </div>

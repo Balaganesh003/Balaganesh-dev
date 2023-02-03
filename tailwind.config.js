@@ -21,6 +21,8 @@ module.exports = {
         primaryPurple: '#b20fe7',
         secondaryPurple: '#5d00ff',
         headingColor: '#090e22',
+        primaryPink: 'rgba(236, 0, 140, 1)',
+        secondaryPink: 'rgba(252, 103, 103, 1)',
       },
       letterSpacing: {
         1: '0.18rem',
