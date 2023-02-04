@@ -2,16 +2,66 @@ import React from 'react';
 import Skill from './Skill';
 
 const skillList = [
-  { skillname: 'HTML', percentage: 95 },
-  { skillname: 'CSS', percentage: 75 },
-  { skillname: 'Javascript', percentage: 75 },
-  { skillname: 'React Js', percentage: 60 },
-  { skillname: 'Next Js', percentage: 60 },
-  { skillname: 'Tailwind', percentage: 55 },
-  { skillname: 'Bootstrap', percentage: 35 },
-  { skillname: 'Firebase', percentage: 35 },
-  { skillname: 'Sanity', percentage: 35 },
-  { skillname: 'Python', percentage: 60 },
+  {
+    skillName: 'HTML',
+    skillStrength: 'before:w-[95%]',
+    percentage: 95,
+  },
+  {
+    skillName: 'CSS',
+    percentage: 75,
+    skillStrength: 'before:w-[75%]',
+  },
+  {
+    skillName: 'Javascript',
+    skillStrength: 'before:w-[75%]',
+    percentage: 75,
+  },
+  {
+    skillName: 'React Js',
+    percentage: 65,
+    skillStrength: 'before:w-[65%]',
+  },
+  {
+    skillName: 'Next Js',
+    percentage: 55,
+    skillStrength: 'before:w-[55%]',
+  },
+  {
+    skillName: 'Tailwind CSS',
+    percentage: 60,
+    skillStrength: 'before:w-[60%]',
+  },
+  {
+    skillName: 'Bootstrap',
+    percentage: 35,
+    skillStrength: 'before:w-[35%]',
+  },
+  {
+    skillName: 'Firebase',
+    percentage: 40,
+    skillStrength: 'before:w-[40%]',
+  },
+  {
+    skillName: 'Sanity',
+    percentage: 35,
+    skillStrength: 'before:w-[35%]',
+  },
+  {
+    skillName: 'Python',
+    percentage: 65,
+    skillStrength: 'before:w-[65%]',
+  },
+  {
+    skillName: 'C',
+    percentage: 60,
+    skillStrength: 'before:w-[60%]',
+  },
+  {
+    skillName: 'C++',
+    percentage: 55,
+    skillStrength: 'before:w-[55%]',
+  },
 ];
 
 const Skills = () => {
@@ -24,8 +74,9 @@ const Skills = () => {
         {skillList.map((skill, index) => (
           <Skill
             key={index}
-            skillname={skill.skillname}
+            skillName={skill.skillName}
             percentage={skill.percentage}
+            skillStrength={skill.skillStrength}
           />
         ))}
       </div>

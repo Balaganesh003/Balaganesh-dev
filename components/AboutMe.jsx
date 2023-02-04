@@ -18,7 +18,7 @@ const AboutMe = () => {
           </div>
         </div>
         <div className="flex-1 max-w-lg">
-          <h1 class="text-transparent text-[2.4rem] lg:text-[3rem] bg-clip-text bg-gradient-to-r from-purple-300 to-secondaryPurple">
+          <h1 className="text-transparent text-[2.4rem] lg:text-[3rem] bg-clip-text bg-gradient-to-r from-purple-300 to-secondaryPurple">
             I&rsquo;m Balaganesh
           </h1>
           <p className="text-[1rem] mt-3">
