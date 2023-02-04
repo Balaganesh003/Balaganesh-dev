@@ -13,7 +13,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className="">
+    <>
       <div className="hidden md:flex items-center justify-between py-7 bg-primary w-screen px-[3.5rem] ">
         {/* Desktop */}
         <div className="cursor-pointer mt-1">
@@ -30,7 +30,7 @@ const Navigation = () => {
       </div>
       {/* Mobile */}
       <div className="md:hidden top-0 fixed  ">
-        <div className="relative h-screen ">
+        <div className="relative ">
           {/* Nav Toggle */}
           <div className="w-screen bg-primary flex px-5 py-6 justify-between">
             {/* Logo */}
@@ -54,7 +54,7 @@ const Navigation = () => {
           </div>
           {/* Nav Items */}
           <div
-            className={`w-[60%] h-[100%] bg-bgNavy  absolute inset-y-0  ${
+            className={`w-[60%] h-screen bg-bgNavy  absolute inset-y-0  ${
               isOpen ? 'right-0' : '-right-[50rem]'
             }   transition-all duration-300 ease-in-out overflow-y-scroll scrollbar-hide`}>
             <div className="flex mt-24 justify-center ">
@@ -76,7 +76,7 @@ const Navigation = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
