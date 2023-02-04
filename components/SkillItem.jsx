@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Skill = ({ skillName, percentage, skillStrength }) => {
+const SkillItem = ({ skillName, percentage, skillStrength }) => {
   return (
     <div className="flex flex-col group cursor-pointer  group border px-4 border-HeadingGray/50 rounded-xl py-2 hover:scale-105 hover:shadow-black hover:shadow-sm transition-all duration-200">
       <div className="text-lg captilize ">{skillName}</div>
@@ -15,4 +15,4 @@ const Skill = ({ skillName, percentage, skillStrength }) => {
   );
 };
 
-export default Skill;
+export default SkillItem;
