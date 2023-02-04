@@ -29,8 +29,8 @@ const Navigation = () => {
         </ul>
       </div>
       {/* Mobile */}
-      <div className="md:hidden top-0 fixed">
-        <div className="relative h-screen">
+      <div className="md:hidden top-0 fixed  ">
+        <div className="relative h-screen ">
           {/* Nav Toggle */}
           <div className="w-screen bg-primary flex px-5 py-6 justify-between">
             {/* Logo */}
@@ -54,11 +54,11 @@ const Navigation = () => {
           </div>
           {/* Nav Items */}
           <div
-            className={`w-[60%] h-screen absolute inset-y-0 ${
+            className={`w-[60%] h-[100%] bg-bgNavy  absolute inset-y-0  ${
               isOpen ? 'right-0' : '-right-[50rem]'
-            }   transition-all duration-300 ease-in-out bg-bgNavy`}>
-            <div className="flex mt-24 justify-center">
-              <ul className="flex flex-col items-center gap-5 justify-center">
+            }   transition-all duration-300 ease-in-out overflow-y-scroll scrollbar-hide`}>
+            <div className="flex mt-24 justify-center ">
+              <ul className="flex flex-col items-center gap-5 justify-center bg-bgNavy w-full pb-5 ">
                 {navItems.map((item, index) => (
                   <NavItem
                     key={index}
