@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fa';
 import AboutMe from '@/components/AboutMe';
 import Skills from '@/components/Skills';
+import Projects from '@/components/Projects';
 
 const links = [
   {
@@ -72,6 +73,8 @@ export default function Home() {
           <AboutMe />
           <hr className="h-px mx-auto my-16 md:my-14 lg:mt-24 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <Skills />
+          <hr className="h-px mx-auto my-16 md:my-14 lg:mt-24 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+          <Projects />
         </main>
         {/* Mail  */}
         <div className="hidden fixed pr-5 right-5 md:flex flex-col items-center text-white h-screen justify-end  space-y-24">
