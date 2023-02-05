@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import NavItem from './NavItem';
 import Image from 'next/image';
 import { MdSegment, MdClear } from 'react-icons/md';
@@ -12,8 +14,22 @@ const Navigation = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      console.log(entry);
+    });
+    observer.observe(navRef.current);
+  }, []);
+
   return (
-    <>
+    <div ref={navRef}>
       <div className="hidden md:flex items-center justify-between py-7 bg-primary w-screen px-[3.5rem] ">
         {/* Desktop */}
         <div className="cursor-pointer mt-1">
@@ -21,15 +37,27 @@ const Navigation = () => {
         </div>
         <ul className="flex flex-row items-center justify-center">
           {navItems.map((item, index) => (
-            <NavItem key={index} text={item} />
+            <NavItem key={index} text={item} delay={50 * (index + 1)} />
           ))}
-          <button className="px-5 tracking-wide text-base py-2 mx-6 mr-8 border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 transition-all duration-200 text-[1.1rem] hover:bg-cyan-300/5 active:scale-95">
-            Resume
+
+          <button
+            type="button"
+            className="active:scale-95 transition-all duration-200">
+            <a
+              data-aos="fade-down"
+              data-aos-duration="1250"
+              data-aos-delay="200"
+              className="px-5 tracking-wide text-base py-2 mx-6 mr-8 border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500  text-[1.1rem] hover:bg-cyan-300/5  inline-block">
+              Resume
+            </a>
           </button>
         </ul>
       </div>
       {/* Mobile */}
-      <div className="md:hidden top-0 fixed  ">
+      <div
+        className="md:hidden top-0 fixed  "
+        data-aos="fade-down"
+        data-aos-duration="1250">
         <div className="relative ">
           {/* Nav Toggle */}
           <div className="w-screen bg-primary flex px-5 py-6 justify-between">
@@ -61,6 +89,7 @@ const Navigation = () => {
               <ul className="flex flex-col items-center gap-5 justify-center bg-bgNavy w-full pb-5 ">
                 {navItems.map((item, index) => (
                   <NavItem
+                    isOpen={isOpen}
                     key={index}
                     text={item}
                     toggleNav={handleNavToggle}
@@ -76,7 +105,7 @@ const Navigation = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

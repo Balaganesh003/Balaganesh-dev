@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
 
 const Header = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <div className="mt-12 md:16">
+    <div
+      data-aos="fade-right"
+      data-aos-duration="1600"
+      data-aos-delay="1100"
+      className="mt-12 md:16">
       <h1 className="md:tracking-1 tracking-widest py-2 text-[0.75rem] md:text-xs  text-HeadingGray uppercase">
         Hi, My name is
       </h1>
@@ -19,8 +27,10 @@ const Header = () => {
         trends.
       </p>
 
-      <button className="py-3 px-6 mt-10  border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95">
-        Want to Work with me
+      <button
+        type="button"
+        className="py-3 px-6 mt-10  border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95">
+        Want to Work with me ?
       </button>
     </div>
   );

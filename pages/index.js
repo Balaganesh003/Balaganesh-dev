@@ -1,6 +1,9 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Head from 'next/head';
 import Navigation from '@/components/Navigation';
 import Header from '@/components/Header';
+import { useEffect } from 'react';
 import {
   FaWhatsapp,
   FaInstagram,
@@ -41,6 +44,9 @@ const links = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <Head>
@@ -51,7 +57,11 @@ export default function Home() {
       </Head>
 
       <div className="grid grid-flow-col  bg-primary relative">
-        <div className="hidden  fixed justify-end left-5 px-9 md:flex flex-col items-center text-white h-screen  space-y-7">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1300"
+          data-aos-delay="1600"
+          className="hidden  fixed justify-end left-5 px-9 md:flex flex-col items-center text-white h-screen  space-y-7">
           <div className="flex flex-col space-y-7">
             {links.map((link, index) => (
               <a key={index} target="_new" href={link.link}>
@@ -77,7 +87,11 @@ export default function Home() {
           <Projects />
         </main>
         {/* Mail  */}
-        <div className="hidden fixed pr-5 right-5 md:flex flex-col items-center text-white h-screen justify-end  space-y-24">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1300"
+          data-aos-delay="1600"
+          className="hidden fixed pr-5 right-5 md:flex flex-col items-center text-white h-screen justify-end  space-y-24">
           <div className="rotate-90 mb-20 w-10 py-[2.9rem] ">
             <a
               href="mailto:k.balaganesh26@gmail.com"
