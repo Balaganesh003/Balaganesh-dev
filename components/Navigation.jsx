@@ -9,6 +9,7 @@ const navItems = ['About Me', 'Skills', 'Projects', 'Contact'];
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   const handleNavToggle = () => {
     setIsOpen(!isOpen);
@@ -18,19 +19,22 @@ const Navigation = () => {
     AOS.init();
   }, []);
 
-  const navRef = useRef(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      console.log(entry);
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 150) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
     });
-    observer.observe(navRef.current);
   }, []);
 
   return (
-    <div ref={navRef}>
-      <div className="hidden md:flex items-center justify-between py-7 bg-primary w-screen px-[3.5rem] ">
+    <div>
+      <div
+        className={`hidden md:flex items-center justify-between py-7 bg-primary w-screen px-[3.5rem] ${
+          isSticky && 'shadow-2xl'
+        }`}>
         {/* Desktop */}
         <div className="cursor-pointer mt-1">
           <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
@@ -55,12 +59,15 @@ const Navigation = () => {
       </div>
       {/* Mobile */}
       <div
-        className="md:hidden top-0 fixed  "
+        className={`md:hidden top-0 fixed  `}
         data-aos="fade-down"
         data-aos-duration="1250">
         <div className="relative ">
           {/* Nav Toggle */}
-          <div className="w-screen bg-primary flex px-5 py-6 justify-between">
+          <div
+            className={`w-screen bg-primary flex px-5 py-6 justify-between ${
+              isSticky && 'shadow-2xl'
+            }`}>
             {/* Logo */}
             <div className="cursor-pointer flex items-center justify-center">
               <Image src="/logo.svg" alt="My Logo" width={28} height={28} />

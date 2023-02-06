@@ -6,7 +6,12 @@ const Projects = () => {
       <h1 className="text-xl uppercase text-center text-HeadingGray hover:text-white transition-all duration-200 cursor-pointer">
         Projects
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 gap-x-5 ">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1150"
+        data-aos-once="true"
+        data-aos-delay="200"
+        className="grid grid-cols-1 md:grid-cols-2 mt-10 gap-x-5 ">
         <div className=" max-w-md  ">
           <img
             className="rounded-lg mt-5"
@@ -14,7 +19,12 @@ const Projects = () => {
             alt="grocery-app"
           />
         </div>
-        <div className="max-w-lg">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1150"
+          data-aos-once="true"
+          data-aos-delay="200"
+          className="max-w-lg">
           <h1 className="text-xl uppercase text-center my-4 md:mb-2">
             Grocery App
           </h1>

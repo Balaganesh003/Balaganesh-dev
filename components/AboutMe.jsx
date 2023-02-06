@@ -4,11 +4,20 @@ import { FaGithub } from 'react-icons/fa';
 const AboutMe = () => {
   return (
     <>
-      <h1 className="uppercase text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
+      <h1
+        data-aos="fade-right"
+        data-aos-duration="1250"
+        data-aos-once="true"
+        className="uppercase text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
         About Me
       </h1>
       <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
-        <div className="flex-1 flex">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1150"
+          data-aos-once="true"
+          data-aos-delay="200"
+          className="flex-1 flex">
           <div className="lg:w-[25rem]  md:w-[20rem] w-[100%] max-w-lg p-4">
             <img
               src="/balaganesh-dev-1.jpeg"
@@ -17,7 +26,12 @@ const AboutMe = () => {
             />
           </div>
         </div>
-        <div className="flex-1 max-w-lg">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1150"
+          data-aos-once="true"
+          data-aos-delay="200"
+          className="flex-1 max-w-lg">
           <h1 className="text-transparent text-[2.4rem] lg:text-[3rem] bg-clip-text bg-gradient-to-r from-purple-300 to-secondaryPurple">
             I&rsquo;m Balaganesh
           </h1>
