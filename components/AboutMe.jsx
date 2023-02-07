@@ -5,7 +5,7 @@ const AboutMe = () => {
   return (
     <>
       <h1
-        data-aos="fade-right"
+        data-aos="fade-up"
         data-aos-duration="1250"
         data-aos-once="true"
         className="uppercase text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
