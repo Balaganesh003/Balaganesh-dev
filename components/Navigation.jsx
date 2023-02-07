@@ -5,7 +5,23 @@ import NavItem from './NavItem';
 import Image from 'next/image';
 import { MdSegment, MdClear } from 'react-icons/md';
 
-const navItems = ['About Me', 'Skills', 'Projects', 'Contact'];
+const navItems = [
+  {
+    id: 1,
+    text: 'About Me',
+    link: '#about-section',
+  },
+  {
+    id: 2,
+    text: 'Skills',
+    link: '#skills-section',
+  },
+  {
+    id: 3,
+    text: 'Projects',
+    link: '#project-section',
+  },
+];
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,8 +56,13 @@ const Navigation = () => {
           <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
         </div>
         <ul className="flex flex-row items-center justify-center">
-          {navItems.map((item, index) => (
-            <NavItem key={index} text={item} delay={50 * (index + 1)} />
+          {navItems.map(({ text, link }, index) => (
+            <NavItem
+              key={index}
+              text={text}
+              link={link}
+              delay={50 * (index + 1)}
+            />
           ))}
 
           <button
@@ -94,11 +115,12 @@ const Navigation = () => {
             }   transition-all duration-300 ease-in-out overflow-y-scroll scrollbar-hide`}>
             <div className="flex mt-24 justify-center ">
               <ul className="flex flex-col items-center gap-5 justify-center bg-bgNavy w-full pb-5 ">
-                {navItems.map((item, index) => (
+                {navItems.map(({ text, link }, index) => (
                   <NavItem
                     isOpen={isOpen}
                     key={index}
-                    text={item}
+                    text={text}
+                    link={link}
                     toggleNav={handleNavToggle}
                   />
                 ))}

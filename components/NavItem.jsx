@@ -1,12 +1,11 @@
 import React from 'react';
 
-const NavItem = ({ text, toggleNav, delay }) => {
+const NavItem = ({ text, toggleNav, delay, link }) => {
   return (
     <div className="active:scale-90 ">
       <a
-        href={'https://github.com'}
+        href={link}
         className="inline-block"
-        target="_new"
         data-aos="fade-down"
         data-aos-duration="1250"
         data-aos-delay={(-delay + 500).toString()}

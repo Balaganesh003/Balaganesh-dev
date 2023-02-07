@@ -66,7 +66,7 @@ const skillList = [
 
 const Skills = () => {
   return (
-    <div>
+    <div id="skills-section">
       <h1 className="uppercase text-HeadingGray text-xl text-center my-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
         Skills
       </h1>
