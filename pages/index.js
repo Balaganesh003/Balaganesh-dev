@@ -14,6 +14,7 @@ import {
 import AboutMe from '@/components/AboutMe';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
+import Footer from '@/components/Footer';
 
 const links = [
   {
@@ -88,7 +89,9 @@ export default function Home() {
           <Skills />
           <hr className="h-px mx-auto my-16 md:my-14 lg:mt-24 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <Projects />
+          <Footer />
         </main>
+
         {/* Mail  */}
         <div
           data-aos="fade-up"
