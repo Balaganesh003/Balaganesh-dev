@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa';
 
 const AboutMe = () => {
   return (
-    <div>
+    <div id="about-section">
       <h1
         data-aos="fade-up"
         data-aos-duration="1250"

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
+import DownloadPdfButton from './DownloadButton';
 
 const Header = () => {
   useEffect(() => {

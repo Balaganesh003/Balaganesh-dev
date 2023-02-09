@@ -4,50 +4,18 @@ import Head from 'next/head';
 import Navigation from '@/components/Navigation';
 import Header from '@/components/Header';
 import { useEffect } from 'react';
-import {
-  FaWhatsapp,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaGithub,
-} from 'react-icons/fa';
 import AboutMe from '@/components/AboutMe';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Footer from '@/components/Footer';
-
-const links = [
-  {
-    id: 1,
-    Icon: FaWhatsapp,
-    link: 'https://wa.me/919445543026',
-  },
-  {
-    id: 2,
-    Icon: FaInstagram,
-    link: 'https://www.instagram.com/__balaganesh/',
-  },
-  {
-    id: 3,
-    Icon: FaLinkedin,
-    link: 'https://www.linkedin.com/in/balaganesh-k/',
-  },
-  {
-    id: 4,
-    Icon: FaTwitter,
-    link: 'https://twitter.com/balaganesh_003',
-  },
-  {
-    id: 5,
-    Icon: FaGithub,
-    link: 'https://github.com/Balaganesh003',
-  },
-];
+import MailSideBar from '@/components/MailSideBar';
+import SocialLinks from '@/components/SocialLinks';
 
 export default function Home() {
   useEffect(() => {
     AOS.init();
   }, []);
+
   return (
     <>
       <Head>
@@ -58,20 +26,8 @@ export default function Home() {
       </Head>
 
       <div className="grid grid-flow-col  bg-primary relative">
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1300"
-          data-aos-delay="1600"
-          className="hidden  fixed justify-end left-5 px-9 md:flex flex-col items-center text-white h-screen  space-y-7">
-          <div className="flex flex-col space-y-7">
-            {links.map((link, index) => (
-              <a key={index} target="_new" href={link.link}>
-                <link.Icon className="text-2xl  transition-all hover:text-secondary duration-200 hover:-translate-y-[2px] hover:scale-105 cursor-pointer" />
-              </a>
-            ))}
-          </div>
-          <div className="w-px bg-white h-[5.5rem]"></div>
-        </div>
+        {/* Social Links */}
+        <SocialLinks />
         {/* Main */}
         <main className="bg-primary mx-auto my-auto px-5 md:px-32 pb-12 lg:px-32  text-white ">
           <div className="h-screen flex flex-col justify-center">
@@ -80,10 +36,7 @@ export default function Home() {
             </div>
             <Header />
           </div>
-          <hr
-            id="about-section"
-            className="h-px mx-auto mb-10 md:mb-14 lg:mb-20 bg-gray-100 border-0 rounded  dark:bg-gray-700"
-          />
+          <hr className="h-px mx-auto mb-10 md:mb-14 lg:mb-20 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <AboutMe />
           <hr className="h-px mx-auto my-16 md:my-14 lg:mt-24 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <Skills />
@@ -91,23 +44,8 @@ export default function Home() {
           <Projects />
           <Footer />
         </main>
-
         {/* Mail  */}
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1300"
-          data-aos-delay="1600"
-          className="hidden fixed pr-5 right-5 md:flex flex-col items-center text-white h-screen justify-end  space-y-24">
-          <div className="rotate-90 mb-20 w-10 py-[2.9rem] ">
-            <a
-              href="mailto:k.balaganesh26@gmail.com"
-              target="_new"
-              className="tracking-2 inline-block hover:-translate-x-1 transition-all  duration-200 cursor-pointer hover:text-secondary">
-              k.balaganesh26@gmail.com
-            </a>
-          </div>
-          <div className="w-px bg-white h-[5.5rem]"></div>
-        </div>
+        <MailSideBar />
       </div>
     </>
   );
