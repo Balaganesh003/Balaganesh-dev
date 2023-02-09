@@ -32,12 +32,12 @@ const ProjectItem = ({ project }) => {
         </div>
         <div className="flex gap-5 items-center justify-around">
           <a href={project.githubLink} target="_blank" rel="noreferrer">
-            <button className="py-2 px-4 mt-10 w-[9rem]  border-HeadingBlue border-2 rounded-full cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95">
+            <button className="py-2 px-4 mt-10 lg:w-[9rem] w-[7rem] border-HeadingBlue border-2 rounded-full cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95">
               GitHub
             </button>
           </a>
           <a href={project.liveLink} target="_blank" rel="noreferrer">
-            <button className="py-2 px-4 mt-10 w-[9rem] border-HeadingBlue border-2 rounded-full cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95">
+            <button className="py-2 px-4 mt-10 lg:w-[9rem] w-[7rem] border-HeadingBlue border-2 rounded-full cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95">
               Live Demo
             </button>
           </a>
