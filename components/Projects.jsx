@@ -4,14 +4,15 @@ import projectData from '@/projectData';
 
 const Projects = () => {
   return (
-    <div id="project-section">
+    <div id="project-section" className="">
       <h1 className="text-xl  uppercase text-center text-HeadingGray hover:text-white transition-all duration-200 cursor-pointer">
         Projects
       </h1>
-
-      {projectData.map((project) => (
-        <ProjectItem project={project} key={project.id} />
-      ))}
+      <div>
+        {projectData.map((project) => (
+          <ProjectItem project={project} key={project.id} />
+        ))}
+      </div>
     </div>
   );
 };

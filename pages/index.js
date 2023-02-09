@@ -29,7 +29,7 @@ export default function Home() {
         {/* Social Links */}
         <SocialLinks />
         {/* Main */}
-        <main className="bg-primary mx-auto my-auto px-5 md:px-32 pb-12 lg:px-32  text-white ">
+        <main className="bg-primary mx-auto my-auto px-5 md:px-32 pb-12 lg:px-32 w-screen md:w-auto text-white ">
           <div className="h-screen flex flex-col justify-center">
             <div className="fixed inset-x-0 top-0 ">
               <Navigation />

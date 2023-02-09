@@ -9,15 +9,15 @@ const ProjectItem = ({ project }) => {
       data-aos-delay="200"
       className={`flex mt-[5rem] flex-col ${
         project.id % 2 == 0 ? 'md:flex-row-reverse' : 'md:flex-row'
-      } border-gray-800 border shadow-lg md:border-none md:shadow-none rounded-lg px-5 py-5 lg:px-0 lg:py-0  gap-10`}>
-      <div className=" max-w-md flex-1 ">
+      } border-gray-800 border shadow-lg md:border-none md:shadow-none rounded-lg px-5  py-5 lg:px-0 lg:py-0  gap-10`}>
+      <div className=" max-w-md  md:flex-1 ">
         <img
           className="rounded-lg mt-5"
           src={project.image}
           alt={project.title}
         />
       </div>
-      <div className="max-w-md flex-1">
+      <div className="max-w-md  flex-1">
         <h1 className="text-xl uppercase text-center my-4 md:mb-2">
           {project.title}
         </h1>
