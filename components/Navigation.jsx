@@ -5,24 +5,7 @@ import NavItem from './NavItem';
 import Image from 'next/image';
 import { MdSegment, MdClear } from 'react-icons/md';
 import DownloadPdfButton from './DownloadButton';
-
-const navItems = [
-  {
-    id: 1,
-    text: 'About Me',
-    link: '#about-section',
-  },
-  {
-    id: 2,
-    text: 'Skills',
-    link: '#skills-section',
-  },
-  {
-    id: 3,
-    text: 'Projects',
-    link: '#project-section',
-  },
-];
+import navItems from '@/navItems';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

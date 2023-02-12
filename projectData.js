@@ -12,8 +12,8 @@ const projectData = [
       'Firebase',
     ],
     image: './grocery-app.gif',
-    githubLink: '',
-    liveLink: '',
+    githubLink: 'https://github.com/Balaganesh003/grocery-app',
+    liveLink: 'https://grocery-app-balaganesh.netlify.app/',
   },
   {
     id: 2,
