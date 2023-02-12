@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
+import DownloadPdfButton from './DownloadButton';
 
 const AboutMe = () => {
   return (
-    <div id="about-section">
+    <div>
       <h1
         data-aos="fade-up"
         data-aos-duration="1250"
@@ -54,7 +55,7 @@ const AboutMe = () => {
             challenging projects.
           </p>
 
-          <button className="py-3 px-6 mt-8 border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95 ">
+          <button className="hidden md:block py-3 px-6 mt-10  border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95 ">
             <a
               href="https://github.com/Balaganesh003"
               target="_new"
@@ -62,6 +63,9 @@ const AboutMe = () => {
               <FaGithub /> My github
             </a>
           </button>
+          <div className="md:hidden mt-10 animate-none">
+            <DownloadPdfButton />
+          </div>
         </div>
       </div>
     </div>

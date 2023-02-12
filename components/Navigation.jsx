@@ -47,7 +47,7 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-primary w-screen">
       <div
         className={`hidden md:flex items-center justify-between py-7 bg-primary w-screen px-[3.5rem] ${
           isSticky && 'shadow-2xl'
@@ -65,12 +65,17 @@ const Navigation = () => {
               delay={50 * (index + 1)}
             />
           ))}
-          <DownloadPdfButton />
+          <span
+            data-aos="fade-down"
+            data-aos-duration="1250"
+            data-aos-delay="200">
+            <DownloadPdfButton />
+          </span>
         </ul>
       </div>
       {/* Mobile */}
       <div
-        className={`md:hidden top-0 fixed  `}
+        className={`md:hidden top-0 fixed bg-primary w-screen  `}
         data-aos="fade-down"
         data-aos-duration="1250">
         <div className="relative ">

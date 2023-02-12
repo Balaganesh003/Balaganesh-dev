@@ -3,15 +3,23 @@ import 'aos/dist/aos.css';
 import Head from 'next/head';
 import Navigation from '@/components/Navigation';
 import Header from '@/components/Header';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AboutMe from '@/components/AboutMe';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Footer from '@/components/Footer';
 import MailSideBar from '@/components/MailSideBar';
 import SocialLinks from '@/components/SocialLinks';
+import Spinner from '@/components/Spinner';
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -25,30 +33,43 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
 
-      <div className="grid grid-flow-col  bg-primary relative">
-        {/* Social Links */}
-        <SocialLinks />
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className="grid grid-flow-col  bg-primary relative">
+          {/* Social Links */}
+          <SocialLinks />
 
-        {/* Main */}
-        <main className="bg-primary mx-auto my-auto px-5 md:px-32 pb-12 lg:px-32 w-screen md:w-auto text-white ">
-          <div className="h-screen flex flex-col justify-center">
-            <div className="fixed inset-x-0 top-0 ">
-              <Navigation />
+          {/* Main */}
+          <main className="bg-primary mx-auto my-auto px-5 md:px-32 pb-12 lg:px-32 w-screen md:w-auto text-white ">
+            <div className="h-screen flex flex-col justify-center">
+              <div className="fixed inset-x-0 top-0 ">
+                <Navigation />
+              </div>
+              <Header />
             </div>
-            <Header />
-          </div>
-          <hr className="h-px mx-auto mb-10 md:mb-14 lg:mb-20 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
-          <AboutMe />
-          <hr className="h-px mx-auto my-16 md:my-14 lg:mt-24 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
-          <Skills />
-          <hr className="h-px mx-auto my-16 md:my-14 lg:mt-24 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
-          <Projects />
+            <hr
+              id="about-section"
+              className="h-px mx-auto mb-24 md:mb-28 bg-gray-100 border-0 rounded  dark:bg-gray-700"
+            />
+            <AboutMe />
+            <hr
+              id="skills-section"
+              className="h-px mx-auto  my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700"
+            />
+            <Skills />
+            <hr
+              id="project-section"
+              className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700"
+            />
+            <Projects />
 
-          <Footer />
-        </main>
-        {/* Mail  */}
-        <MailSideBar />
-      </div>
+            <Footer />
+          </main>
+          {/* Mail  */}
+          <MailSideBar />
+        </div>
+      )}
     </>
   );
 }

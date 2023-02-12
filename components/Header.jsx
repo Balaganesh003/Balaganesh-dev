@@ -1,11 +1,6 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import DownloadPdfButton from './DownloadButton';
+import React from 'react';
 
 const Header = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <div
       data-aos="fade-right"
