@@ -9,7 +9,7 @@ const DownloadPdfButton = ({ toggleNav }) => {
       <a
         href="./resume-balaganesh.pdf"
         download
-        className=" tracking-wide text-base px-8 py-3 md:py-2 md:mx-6 md:mr-8 border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500  text-[1.1rem] hover:bg-cyan-300/5  inline-block">
+        className=" tracking-wide text-base px-8 py-2 md:py-2 md:px-5 md:mx-6 md:mr-8 border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500  text-[1.1rem] hover:bg-cyan-300/5  inline-block">
         Resume
       </a>
     </button>
