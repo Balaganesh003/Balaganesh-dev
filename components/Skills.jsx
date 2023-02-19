@@ -66,11 +66,11 @@ const SkillsData = [
 
 const Skills = () => {
   return (
-    <div>
+    <div id="skills-section" className="py-[8rem] ">
       <h1 className="uppercase text-HeadingGray text-xl text-center my-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
         Skills
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-8">
         {SkillsData.map((skill, index) => (
           <SkillItem
             key={index}

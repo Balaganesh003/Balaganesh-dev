@@ -2,11 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div
-      data-aos="fade-right"
-      data-aos-duration="1600"
-      data-aos-delay="1100"
-      className="mt-12 md:16">
+    <div data-aos="fade-right" data-aos-duration="1600" data-aos-delay="1100">
       <h1 className="md:tracking-1 tracking-widest py-2 text-[0.75rem] md:text-xs  text-HeadingGray uppercase">
         Hi, My name is
       </h1>

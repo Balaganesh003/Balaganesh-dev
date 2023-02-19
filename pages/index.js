@@ -10,18 +10,22 @@ import Projects from '@/components/Projects';
 import Footer from '@/components/Footer';
 import MailSideBar from '@/components/MailSideBar';
 import SocialLinks from '@/components/SocialLinks';
-import Spinner from '@/components/Spinner';
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  const [isStickyNav, setIsStickyNav] = useState(false);
 
   useEffect(() => {
     AOS.init();
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 95) {
+        setIsStickyNav(true);
+      } else {
+        setIsStickyNav(false);
+      }
+    });
   }, []);
 
   return (
@@ -33,43 +37,27 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
 
-      {loading ? (
-        <Spinner />
-      ) : (
-        <div className="grid grid-flow-col  bg-primary relative">
-          {/* Social Links */}
-          <SocialLinks />
+      <main className={`bg-primary h-full  relative text-white  px-[3.5rem]`}>
+        <SocialLinks />
+        <Navigation />
+        <div
+          className={`md:px-[4.5rem] flex flex-col items-center justify-center`}>
+          <div
+            className={`h-[calc(100vh-7rem)] min-h-[30rem] pb-4 flex items-center ${
+              isStickyNav && 'mt-[7rem]'
+            }`}>
+            <Header />
+          </div>
+          <hr className="w-full border-[#2f2f2f] border-opacity-50" />
+          <AboutMe />
+          <hr className="w-full border-[#2f2f2f] border-opacity-50" />
 
-          {/* Main */}
-          <main className="bg-primary mx-auto my-auto px-5 md:px-32 pb-12 lg:px-32 w-screen md:w-auto text-white ">
-            <div className="h-screen flex flex-col justify-center">
-              <div className="fixed inset-x-0 top-0 ">
-                <Navigation />
-              </div>
-              <Header />
-            </div>
-            <hr
-              id="about-section"
-              className="h-px mx-auto mb-24 md:mb-28 bg-gray-100 border-0 rounded  dark:bg-gray-700"
-            />
-            <AboutMe />
-            <hr
-              id="skills-section"
-              className="h-px mx-auto  my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700"
-            />
-            <Skills />
-            <hr
-              id="project-section"
-              className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700"
-            />
-            <Projects />
-
-            <Footer />
-          </main>
-          {/* Mail  */}
-          <MailSideBar />
+          {/* <Skills /> */}
+          <Projects />
+          <Footer />
         </div>
-      )}
+        <MailSideBar />
+      </main>
     </>
   );
 }

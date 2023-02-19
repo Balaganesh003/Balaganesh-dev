@@ -4,12 +4,12 @@ import DownloadPdfButton from './DownloadButton';
 
 const AboutMe = () => {
   return (
-    <div>
+    <div id="about-section" className="py-[8rem] ">
       <h1
         data-aos="fade-up"
         data-aos-duration="1250"
         data-aos-once="true"
-        className="uppercase text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
+        className="uppercase  text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
         About Me
       </h1>
       <div className="flex flex-col md:flex-row items-start md:items-center gap-5">

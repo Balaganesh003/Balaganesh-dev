@@ -4,7 +4,7 @@ import SocialLinksData from '@/socialLinksData';
 
 const Footer = () => {
   return (
-    <div className="text-center  mt-24 md:mt-28">
+    <div className="text-center  my-16 md:mt-32">
       <div className=" md:hidden flex items-center justify-center  space-x-5 mb-10">
         {SocialLinksData.map((link, index) => (
           <a key={index} target="_new" href={link.link}>

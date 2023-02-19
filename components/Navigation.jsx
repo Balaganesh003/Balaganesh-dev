@@ -21,7 +21,7 @@ const Navigation = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 150) {
+      if (window.scrollY > 95) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -30,16 +30,16 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div className="bg-primary w-screen">
+    <div className="bg-primary w-full">
       <div
-        className={`hidden md:flex items-center justify-between py-7 bg-primary w-screen px-[3.5rem] ${
-          isSticky && 'shadow-2xl'
+        className={`hidden md:flex items-center justify-between h-28 bg-primary transition-transform duration-200   ${
+          isSticky && 'shadow-2xl fixed inset-x-0 top-0  z-50 px-[3.5rem]'
         }`}>
         {/* Desktop */}
         <div className="cursor-pointer mt-1">
           <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
         </div>
-        <ul className="flex flex-row items-center justify-center">
+        <ul className="flex flex-row gap-2 items-center justify-center">
           {navItems.map(({ text, link }, index) => (
             <NavItem
               key={index}
