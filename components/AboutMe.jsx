@@ -12,14 +12,14 @@ const AboutMe = () => {
         className="uppercase  text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
         About Me
       </h1>
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 ">
         <div
           data-aos="fade-up"
           data-aos-duration="1150"
           data-aos-once="true"
           data-aos-delay="200"
-          className="flex-1 flex">
-          <div className="lg:w-[25rem]  md:w-[20rem] w-[100%] max-w-lg p-4">
+          className="flex-1 max-w-sm mx-auto flex">
+          <div className="lg:w-[25rem] max-w-lg p-4">
             <img
               src="/balaganesh-dev-1.jpeg"
               alt="My Logo"

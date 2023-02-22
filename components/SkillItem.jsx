@@ -2,7 +2,7 @@ import React from 'react';
 
 const SkillItem = ({ skillName, percentage, skillStrength }) => {
   return (
-    <div className=" hover:scale-105 hover:shadow-black hover:rounded-xl hover:shadow-sm transition-all  duration-200">
+    <div className=" hover:scale-105 hover:shadow-black hover:rounded-xl hover:shadow-sm transition-all   duration-200">
       <div
         data-aos="fade-up"
         data-aos-duration="1150"

@@ -5,7 +5,7 @@ const DownloadPdfButton = ({ toggleNav }) => {
     <button
       onClick={toggleNav}
       type="button"
-      className="active:scale-95 ml-5 transition-all duration-200">
+      className="active:scale-95 md:ml-5 transition-all duration-200">
       <a
         href="./resume-balaganesh.pdf"
         download
