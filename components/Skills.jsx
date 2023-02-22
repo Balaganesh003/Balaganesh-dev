@@ -66,8 +66,8 @@ const SkillsData = [
 
 const Skills = () => {
   return (
-    <div id="skills-section" className="py-[8rem] ">
-      <h1 className="uppercase text-HeadingGray text-xl text-center my-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
+    <div id="skills-section" className="py-[9rem]">
+      <h1 className="uppercase text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
         Skills
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-8">

@@ -15,6 +15,13 @@ const Navigation = () => {
     setIsOpen(!isOpen);
   };
 
+  const ScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -36,8 +43,10 @@ const Navigation = () => {
           isSticky && 'shadow-2xl fixed inset-x-0 top-0  z-50 px-[3.5rem]'
         }`}>
         {/* Desktop */}
-        <div className="cursor-pointer mt-1">
-          <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
+        <div className="cursor-pointer">
+          <a onClick={ScrollToTop} href="#" className="cursor-pointer">
+            <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
+          </a>
         </div>
         <ul className="flex flex-row gap-2 items-center justify-center">
           {navItems.map(({ text, link }, index) => (

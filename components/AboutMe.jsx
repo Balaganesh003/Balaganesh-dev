@@ -4,7 +4,7 @@ import DownloadPdfButton from './DownloadButton';
 
 const AboutMe = () => {
   return (
-    <div id="about-section" className="py-[8rem] ">
+    <div id="about-section" className="py-[9rem] ">
       <h1
         data-aos="fade-up"
         data-aos-duration="1250"

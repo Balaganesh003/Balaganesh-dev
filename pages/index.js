@@ -37,23 +37,24 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
 
-      <main className={`bg-primary h-full  relative text-white  px-[3.5rem]`}>
+      <main
+        className={`bg-primary h-full flex flex-col items-center  relative text-white px-[1.5rem]  md:px-[3.5rem]`}>
         <SocialLinks />
         <Navigation />
-        <div
-          className={`md:px-[4.5rem] flex flex-col items-center justify-center`}>
+        <div className={`md:px-[4.5rem] `}>
           <div
-            className={`h-[calc(100vh-7rem)] min-h-[30rem] pb-4 flex items-center ${
+            className={`h-[calc(100vh-7rem)] min-h-[30rem] pb-10 items-center flex ${
               isStickyNav && 'mt-[7rem]'
             }`}>
             <Header />
           </div>
-          <hr className="w-full border-[#2f2f2f] border-opacity-50" />
+          <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <AboutMe />
-          <hr className="w-full border-[#2f2f2f] border-opacity-50" />
-
-          {/* <Skills /> */}
+          <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+          <Skills />
+          <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <Projects />
+
           <Footer />
         </div>
         <MailSideBar />

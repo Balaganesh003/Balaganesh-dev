@@ -4,7 +4,7 @@ import projectData from '@/projectData';
 
 const Projects = () => {
   return (
-    <div>
+    <div id="project-section" className="pt-[9rem]">
       <h1 className="text-xl uppercase text-center text-HeadingGray hover:text-white transition-all duration-200 cursor-pointer">
         Projects
       </h1>
