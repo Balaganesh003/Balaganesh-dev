@@ -10,6 +10,7 @@ import Projects from '@/components/Projects';
 import Footer from '@/components/Footer';
 import MailSideBar from '@/components/MailSideBar';
 import SocialLinks from '@/components/SocialLinks';
+import ContactMe from '@/components/ContactMe';
 
 export default function Home() {
   const [isStickyNav, setIsStickyNav] = useState(false);
@@ -57,7 +58,8 @@ export default function Home() {
           <Skills />
           <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <Projects />
-
+          <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+          <ContactMe />
           <Footer />
         </div>
         <MailSideBar />

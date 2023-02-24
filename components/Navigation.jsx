@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { MdSegment, MdClear } from 'react-icons/md';
 import DownloadPdfButton from './DownloadButton';
 import navItems from '@/navItems';
+import Link from 'next/link';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,9 +45,9 @@ const Navigation = () => {
         }`}>
         {/* Desktop */}
         <div className="cursor-pointer">
-          <a onClick={ScrollToTop} href="#" className="cursor-pointer">
+          <Link onClick={ScrollToTop} href="#" className="cursor-pointer">
             <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
-          </a>
+          </Link>
         </div>
         <ul className="flex flex-row gap-2 items-center justify-center">
           {navItems.map(({ text, link }, index) => (

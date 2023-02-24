@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Header = () => {
@@ -18,12 +19,13 @@ const Header = () => {
         technology and always strive to stay updated with the latest industry
         trends.
       </p>
-
-      <button
-        type="button"
-        className="py-3 px-6 mt-10  border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95">
-        Want to Work with me ?
-      </button>
+      <Link href="/contact">
+        <button
+          type="button"
+          className="py-3 px-6 mt-10  border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95">
+          Want to Work with me ?
+        </button>
+      </Link>
     </div>
   );
 };
