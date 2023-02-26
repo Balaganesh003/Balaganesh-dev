@@ -39,13 +39,12 @@ export default function Home() {
       </Head>
 
       <main
-        className={`bg-primary h-full flex flex-col items-center  relative text-white px-[1.5rem] w-screen md:w-auto   md:px-[3.5rem]`}>
-        <SocialLinks />
-        <Navigation />
+        className={`bg-primary h-full  flex flex-col items-center  relative text-white px-[1.5rem] w-screen md:w-auto   md:px-[3.5rem]`}>
+        {/* <SocialLinks /> */}
         <div className={`md:px-[4.5rem]`}>
           <div
             className={`h-[calc(100vh-7rem)] min-h-[30rem] xl:pb-10 items-center flex ${
-              isStickyNav && 'md:mt-[7rem] mt-[5rem]'
+              isStickyNav && 'md:mt-[6rem] mt-[5rem]'
             }`}>
             <Header />
           </div>
@@ -60,9 +59,9 @@ export default function Home() {
           <Projects />
           <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <ContactMe />
-          <Footer />
+          {/* <Footer /> */}
         </div>
-        <MailSideBar />
+        {/* <MailSideBar /> */}
       </main>
     </>
   );

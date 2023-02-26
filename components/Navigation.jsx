@@ -38,14 +38,14 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div className="bg-primary w-full">
+    <div className="bg-primary w-full text-white">
       <div
-        className={`hidden md:flex items-center justify-between h-28 bg-primary transition-transform duration-200   ${
-          isSticky && 'shadow-2xl fixed inset-x-0 top-0  z-50 md:px-[3.5rem]'
+        className={`hidden md:flex items-center justify-between h-[6rem] bg-primary transition-transform duration-200 md:px-[3.5rem]   ${
+          isSticky && 'shadow-2xl fixed inset-x-0 top-0  z-50 '
         }`}>
         {/* Desktop */}
         <div className="cursor-pointer">
-          <Link onClick={ScrollToTop} href="#" className="cursor-pointer">
+          <Link onClick={ScrollToTop} href="/" className="cursor-pointer">
             <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
           </Link>
         </div>
@@ -71,8 +71,8 @@ const Navigation = () => {
         <div className="relative">
           <div
             className={`w-full ${
-              isSticky && 'shadow-2xl fixed inset-x-0 top-0  px-[1.5rem]'
-            } bg-primary flex justify-between h-[5rem]`}>
+              isSticky && 'shadow-2xl fixed inset-x-0 top-0  '
+            } bg-primary flex justify-between h-[5rem] px-[1.5rem]`}>
             <div
               className="cursor-pointer flex items-center justify-center"
               onClick={ScrollToTop}>

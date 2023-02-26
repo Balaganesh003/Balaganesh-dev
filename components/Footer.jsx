@@ -4,8 +4,8 @@ import SocialLinksData from '@/socialLinksData';
 
 const Footer = () => {
   return (
-    <div className="text-center  my-16 md:mt-32">
-      <div className=" md:hidden flex items-center justify-center  space-x-5 mb-10">
+    <div className="text-center bg-primary  text-white py-16 md:pt-32">
+      <div className=" md:hidden flex items-center justify-center  space-x-5 pb-10">
         {SocialLinksData.map((link, index) => (
           <a key={index} target="_new" href={link.link}>
             <link.Icon className="text-[1.8rem]  transition-all hover:text-secondary duration-200 hover:-translate-y-[2px] hover:scale-105 cursor-pointer" />
