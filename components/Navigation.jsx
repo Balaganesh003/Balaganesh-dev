@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { MdSegment, MdClear } from 'react-icons/md';
 import DownloadPdfButton from './DownloadButton';
 import navItems from '@/navItems';
+import Link from 'next/link';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,13 +16,20 @@ const Navigation = () => {
     setIsOpen(!isOpen);
   };
 
+  const ScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   useEffect(() => {
     AOS.init();
   }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 150) {
+      if (window.scrollY > 96) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -30,16 +38,18 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div className="bg-primary w-screen">
+    <div className="bg-primary w-full text-white">
       <div
-        className={`hidden md:flex items-center justify-between py-7 bg-primary w-screen px-[3.5rem] ${
-          isSticky && 'shadow-2xl'
+        className={`hidden md:flex items-center justify-between h-[6rem] bg-primary transition-transform duration-200 md:px-[3.5rem]   ${
+          isSticky && 'shadow-2xl fixed inset-x-0 top-0  z-50 '
         }`}>
         {/* Desktop */}
-        <div className="cursor-pointer mt-1">
-          <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
+        <div className="cursor-pointer">
+          <Link onClick={ScrollToTop} href="/" className="cursor-pointer">
+            <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
+          </Link>
         </div>
-        <ul className="flex flex-row items-center justify-center">
+        <ul className="flex flex-row gap-2 items-center justify-center">
           {navItems.map(({ text, link }, index) => (
             <NavItem
               key={index}
@@ -57,55 +67,52 @@ const Navigation = () => {
         </ul>
       </div>
       {/* Mobile */}
-      <div
-        className={`md:hidden top-0 fixed bg-primary w-screen  `}
-        data-aos="fade-down"
-        data-aos-duration="1250">
-        <div className="relative ">
-          {/* Nav Toggle */}
+      <div className={`md:hidden  bg-primary relative`}>
+        <div className="relative">
           <div
-            className={`w-screen bg-primary flex px-5 py-6 justify-between ${
-              isSticky && 'shadow-2xl'
-            }`}>
-            {/* Logo */}
-            <div className="cursor-pointer flex items-center justify-center">
-              <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
+            className={`w-full ${
+              isSticky && 'shadow-2xl fixed inset-x-0 top-0'
+            } bg-primary flex justify-between h-[5rem] px-[1.5rem]`}>
+            <div
+              className="cursor-pointer flex items-center justify-center"
+              onClick={ScrollToTop}>
+              <Link href="/">
+                <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
+              </Link>
             </div>
             {/* Toggle Button */}
-            <button className="cursor-pointer  transition-all duration-300 z-30">
-              {isOpen ? (
-                <MdClear
-                  onClick={handleNavToggle}
-                  className="text-white text-4xl"
-                />
-              ) : (
-                <MdSegment
-                  onClick={handleNavToggle}
-                  className="text-white text-4xl"
-                />
-              )}
+
+            <button className="cursor-pointer ">
+              <MdSegment
+                onClick={handleNavToggle}
+                className="text-white text-4xl z-50 active:rotate-90 transition-all duration-100"
+              />
             </button>
           </div>
-          {/* Nav Items */}
-          <div
-            className={`w-[60%] h-screen bg-bgNavy  absolute inset-y-0  ${
-              isOpen ? 'right-0' : '-right-[50rem]'
-            }   transition-all duration-300 ease-in-out overflow-y-scroll scrollbar-hide`}>
-            <div className="flex mt-24 justify-center ">
-              <ul className="flex flex-col items-center gap-5 justify-center bg-bgNavy w-full pb-5 ">
-                {navItems.map(({ text, link }, index) => (
-                  <NavItem
-                    isOpen={isOpen}
-                    key={index}
-                    text={text}
-                    link={link}
-                    toggleNav={handleNavToggle}
-                  />
-                ))}
 
-                <DownloadPdfButton toggleNav={handleNavToggle} />
-              </ul>
+          <div
+            className={` right-0 top-0 z-[2] transition-transform duration-200 delay-100 ${
+              isOpen ? 'translate-x-0' : 'translate-x-[100%]'
+            } fixed h-screen min-h-fit overflow-y-scroll w-[60%]   bg-bgNavy scrollbar-hide`}>
+            <div className="px-[1.5rem] w-full py-6 text-right">
+              <button>
+                <MdClear
+                  onClick={handleNavToggle}
+                  className="text-white text-4xl active:rotate-90 transition-all duration-100"
+                />
+              </button>
             </div>
+            <ul className="flex  flex-col space-y-5 items-center justify-center w-full">
+              {navItems.map(({ text, link }, index) => (
+                <NavItem
+                  toggleNav={handleNavToggle}
+                  key={index}
+                  text={text}
+                  link={link}
+                  delay={50 * (index + 1)}
+                />
+              ))}
+            </ul>
           </div>
         </div>
       </div>
