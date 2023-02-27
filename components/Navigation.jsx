@@ -29,7 +29,7 @@ const Navigation = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 95) {
+      if (window.scrollY > 96) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -71,14 +71,14 @@ const Navigation = () => {
         <div className="relative">
           <div
             className={`w-full ${
-              isSticky && 'shadow-2xl fixed inset-x-0 top-0  '
+              isSticky && 'shadow-2xl fixed inset-x-0 top-0'
             } bg-primary flex justify-between h-[5rem] px-[1.5rem]`}>
             <div
               className="cursor-pointer flex items-center justify-center"
               onClick={ScrollToTop}>
-              <a href="#">
+              <Link href="/">
                 <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
-              </a>
+              </Link>
             </div>
             {/* Toggle Button */}
 
@@ -91,7 +91,7 @@ const Navigation = () => {
           </div>
 
           <div
-            className={` right-0 top-0 transition-transform duration-200 delay-100 ${
+            className={` right-0 top-0 z-[2] transition-transform duration-200 delay-100 ${
               isOpen ? 'translate-x-0' : 'translate-x-[100%]'
             } fixed h-screen min-h-fit overflow-y-scroll w-[60%]   bg-bgNavy scrollbar-hide`}>
             <div className="px-[1.5rem] w-full py-6 text-right">
@@ -102,7 +102,7 @@ const Navigation = () => {
                 />
               </button>
             </div>
-            <ul className="flex flex-col space-y-5 items-center justify-center w-full">
+            <ul className="flex  flex-col space-y-5 items-center justify-center w-full">
               {navItems.map(({ text, link }, index) => (
                 <NavItem
                   toggleNav={handleNavToggle}
