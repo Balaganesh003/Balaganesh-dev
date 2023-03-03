@@ -1,4 +1,4 @@
-const projectData = [
+const totalProjects = [
   {
     id: 1,
     title: 'Grocery App',
@@ -38,6 +38,15 @@ const projectData = [
     githubLink: 'https://github.com/Balaganesh003/Omnifood-website',
     liveLink: 'https://omnifood-bala.netlify.app/',
   },
+  {
+    id: 4,
+    title: 'Twitter Clone',
+    category: 'WebPage',
+    description:
+      'Twitter clone is a social media application that allows users to post tweets, follow other users, and like and comment on tweets.',
+    image: './twitter-clone.png',
+    githubLink: 'https://github.com/Balaganesh003/twitter-clone',
+  },
 ];
 
-export default projectData;
+export default totalProjects;
