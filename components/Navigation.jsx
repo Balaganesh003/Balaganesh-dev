@@ -1,19 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import NavItem from './NavItem';
 import Image from 'next/image';
 import { MdSegment, MdClear } from 'react-icons/md';
 import DownloadPdfButton from './DownloadButton';
 import navItems from '@/navItems';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import { uiActions } from '@/store/ui-slice';
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
   const [isSticky, setIsSticky] = useState(false);
 
+  const { isNavOpen } = useSelector((state) => state.ui);
+
   const handleNavToggle = () => {
-    setIsOpen(!isOpen);
+    dispatch(uiActions.toggleNav());
   };
 
   const ScrollToTop = () => {
@@ -22,10 +24,6 @@ const Navigation = () => {
       behavior: 'smooth',
     });
   };
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -49,7 +47,7 @@ const Navigation = () => {
             <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
           </Link>
         </div>
-        <ul className="flex flex-row gap-2 items-center justify-center">
+        <ul className="flex flex-row  items-center justify-center">
           {navItems.map(({ text, link }, index) => (
             <NavItem
               key={index}
@@ -92,7 +90,7 @@ const Navigation = () => {
 
           <div
             className={` right-0 top-0 z-[2] transition-transform duration-200 delay-100 ${
-              isOpen ? 'translate-x-0' : 'translate-x-[100%]'
+              isNavOpen ? 'translate-x-0' : 'translate-x-[100%]'
             } fixed h-screen min-h-fit overflow-y-scroll w-[60%]   bg-bgNavy scrollbar-hide`}>
             <div className="px-[1.5rem] w-full py-6 text-right">
               <button>

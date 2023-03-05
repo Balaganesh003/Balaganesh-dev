@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import DownloadPdfButton from './DownloadButton';
+import Image from 'next/image';
 
 const AboutMe = () => {
   return (
@@ -17,8 +18,10 @@ const AboutMe = () => {
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 ">
         <div className="flex-1 max-w-sm mx-auto flex">
           <div className="lg:w-[25rem] max-w-lg p-4">
-            <img
+            <Image
               src="/balaganesh-dev-1.jpeg"
+              width={500}
+              height={500}
               alt="My Logo"
               className="rounded-lg"
             />
