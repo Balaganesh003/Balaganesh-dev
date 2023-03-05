@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const ProjectItem = ({ project }) => {
   return (
@@ -7,8 +8,10 @@ const ProjectItem = ({ project }) => {
         project.id % 2 == 0 ? 'md:flex-row-reverse' : 'md:flex-row'
       } border-gray-800 border shadow-lg md:border-none md:shadow-none rounded-lg px-5  py-5 lg:px-0 lg:py-0  gap-10`}>
       <div className=" max-w-md  md:flex-1 ">
-        <img
+        <Image
           className="rounded-lg mt-5"
+          width={400}
+          height={300}
           src={project.image}
           alt={project.title}
         />

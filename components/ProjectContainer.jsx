@@ -13,12 +13,13 @@ const ProjectContainer = () => {
           (project) =>
             project.category === selectedCategory || selectedCategory === 'All'
         )
-        .map(({ title, image, description }, i) => (
+        .map(({ title, image, description, githubLink }, i) => (
           <ProjectItemCard
             key={i * 99}
             title={title}
             image={image}
             description={description}
+            githubLink={githubLink}
           />
         ))}
     </motion.div>

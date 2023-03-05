@@ -14,6 +14,11 @@ const navItems = [
     text: 'Projects',
     link: '#project-section',
   },
+  {
+    id: 4,
+    text: 'Contact Me',
+    link: '#contact-section',
+  },
 ];
 
 export default navItems;
