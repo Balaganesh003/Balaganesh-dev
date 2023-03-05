@@ -38,21 +38,21 @@ export default function Home() {
         className={`bg-primary h-full  flex flex-col items-center  relative text-white px-[1.5rem] w-screen md:w-auto   md:px-[3.5rem]`}>
         <div className={`md:px-[4.5rem]`}>
           <div
-            className={`h-[calc(100vh-7rem)] min-h-[30rem] xl:pb-10 items-center flex ${
+            className={`h-[calc(100vh-7rem)] min-h-[30rem] pb-10 md:pb-0 xl:pb-10 items-center flex ${
               isStickyNav && 'md:mt-[6rem] mt-[5rem]'
             }`}>
             <Header />
           </div>
 
-          <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+          <hr className="h-px mx-auto my-[2rem] bg-gray-100 border-0 rounded  dark:bg-gray-700" />
 
           <AboutMe />
 
-          <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+          <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <Skills />
-          <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+          <hr className="h-px mx-auto mt-[2rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <Projects />
-          <hr className="h-px mx-auto my-24 md:my-28 bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+          <hr className="h-px mx-auto mt-[7rem] mb-[5rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
           <ContactMe />
         </div>
       </main>

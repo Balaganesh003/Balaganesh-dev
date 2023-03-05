@@ -66,8 +66,14 @@ const SkillsData = [
 
 const Skills = () => {
   return (
-    <div id="skills-section" className="py-[9rem] ">
-      <h1 className="uppercase text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1150"
+      data-aos-once="true"
+      data-aos-delay="200"
+      id="skills-section"
+      className="py-[7rem] ">
+      <h1 className="uppercase text-HeadingGray text-xl text-center mb-10  duration-200 transition-all  hover:text-gray-200  ">
         Skills
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-x-12 gap-y-8">
