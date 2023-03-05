@@ -33,7 +33,7 @@ const Projects = () => {
       <div className="flex space-x-5 justify-center overflow-scroll scrollbar-hide">
         <div
           onClick={() => handleCategory('All')}
-          className={`inline-block flex-shrink-0 ml-[5rem] md:ml-0 px-4 py-2 text-center uppercase  ${
+          className={`inline-block flex-shrink-0 ml-[7rem] md:ml-0 px-4 py-2 text-center uppercase  ${
             selectedCategory == 'All'
               ? 'bg-gradient-to-tl from-blue-600 to-cyan-400   '
               : 'border-2  border-cyan-400 hover:bg-cyan-400/5'
