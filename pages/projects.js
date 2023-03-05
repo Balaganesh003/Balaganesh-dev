@@ -30,10 +30,10 @@ const Projects = () => {
         isStickyNav && 'md:mt-[6rem] mt-[5rem]'
       } `}>
       <h1 className="text-4xl uppercase text-center py-5 pb-10">My Works</h1>
-      <div className="flex space-x-5 justify-center overflow-scroll scrollbar-hide">
+      <div className="flex space-x-5 justify-start sm:justify-center overflow-scroll scrollbar-hide">
         <div
           onClick={() => handleCategory('All')}
-          className={`inline-block flex-shrink-0 ml-[8rem] md:ml-0 px-4 py-2 text-center uppercase  ${
+          className={`inline-block flex-shrink-0  px-4 py-2 text-center uppercase  ${
             selectedCategory == 'All'
               ? 'bg-gradient-to-tl from-blue-600 to-cyan-400   '
               : 'border-2  border-cyan-400 hover:bg-cyan-400/5'
