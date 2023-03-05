@@ -47,6 +47,16 @@ const totalProjects = [
     image: './twitter-clone.png',
     githubLink: 'https://github.com/Balaganesh003/twitter-clone',
   },
+  {
+    id: 5,
+    title: 'Sanke Game',
+    category: 'python',
+    description:
+      'Snake Game is a simple game where the player controls a snake and tries to eat as many apples as possible. The snake grows longer with each apple it eats.',
+    image: './snake-game.jpg',
+    githubLink:
+      'https://github.com/Balaganesh003/python-projects/tree/main/sanke%20game%20using%20turtle',
+  },
 ];
 
 export default totalProjects;

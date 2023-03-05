@@ -3,10 +3,6 @@ import React from 'react';
 const ProjectItem = ({ project }) => {
   return (
     <div
-      data-aos="fade-up"
-      data-aos-duration="1150"
-      data-aos-once="true"
-      data-aos-delay="200"
       className={`flex max-w-sm md:max-w-none  first:mt-[3rem] md:first:mt-[5rem] mt-[5rem] flex-col ${
         project.id % 2 == 0 ? 'md:flex-row-reverse' : 'md:flex-row'
       } border-gray-800 border shadow-lg md:border-none md:shadow-none rounded-lg px-5  py-5 lg:px-0 lg:py-0  gap-10`}>

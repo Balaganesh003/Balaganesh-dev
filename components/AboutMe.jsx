@@ -4,21 +4,18 @@ import DownloadPdfButton from './DownloadButton';
 
 const AboutMe = () => {
   return (
-    <div id="about-section" className="py-[9rem] ">
-      <h1
-        data-aos="fade-up"
-        data-aos-duration="1250"
-        data-aos-once="true"
-        className="uppercase  text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1150"
+      data-aos-once="true"
+      data-aos-delay="200"
+      id="about-section"
+      className="pt-[7rem]">
+      <h1 className="uppercase  text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
         About Me
       </h1>
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 ">
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1150"
-          data-aos-once="true"
-          data-aos-delay="200"
-          className="flex-1 max-w-sm mx-auto flex">
+        <div className="flex-1 max-w-sm mx-auto flex">
           <div className="lg:w-[25rem] max-w-lg p-4">
             <img
               src="/balaganesh-dev-1.jpeg"
@@ -27,12 +24,7 @@ const AboutMe = () => {
             />
           </div>
         </div>
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1150"
-          data-aos-once="true"
-          data-aos-delay="200"
-          className="flex-1 max-w-lg">
+        <div className="flex-1 max-w-lg">
           <h1 className="text-transparent text-[2.4rem] lg:text-[3rem] bg-clip-text bg-gradient-to-r from-purple-300 to-secondaryPurple">
             I&rsquo;m Balaganesh
           </h1>

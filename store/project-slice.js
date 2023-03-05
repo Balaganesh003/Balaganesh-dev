@@ -4,6 +4,7 @@ import totalProjects from '../AllProjectsData';
 const initialProjectState = {
   projects: totalProjects,
   selectedProject: [],
+  selectedCategory: 'All',
   isLoading: false,
   error: null,
 };
@@ -26,6 +27,10 @@ const projectSlice = createSlice({
     },
     addProject(state, action) {
       state.projects.push(action.payload);
+    },
+
+    setCategory(state, action) {
+      state.selectedCategory = action.payload;
     },
   },
 });

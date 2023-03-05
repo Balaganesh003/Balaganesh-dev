@@ -61,6 +61,7 @@ const Contact = () => {
           onSubmit={sendEmail}
           className="py-5 bg-primary  flex flex-col gap-5 flex-1 w-full">
           <input
+            required
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Your Name"
@@ -70,6 +71,7 @@ const Contact = () => {
           />
 
           <input
+            required
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             name="email"
