@@ -12,14 +12,14 @@ const ProjectItemCard = ({ title, image, description, githubLink }) => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
         className="max-w-[25rem] m-auto border border-gray-700 shadow-2xl px-4 py-6 md:border-none md:shadow-none md:px-0 md:py-3 rounded-lg">
-        <div>
+        <div className=" object-cover">
           {image && (
             <Image
               src={image}
               alt="grocery-app"
-              className="object-cover rounded-lg"
-              width={400}
-              height={300}
+              className="object-cover w-full h-[13rem] rounded-lg"
+              width={500}
+              height={400}
             />
           )}
         </div>

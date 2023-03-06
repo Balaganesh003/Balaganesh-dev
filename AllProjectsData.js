@@ -132,6 +132,16 @@ const totalProjects = [
     image: '/twitter-bot.jpg',
     githubLink: 'https://github.com/Balaganesh003/twitter_bot',
   },
+  {
+    id: 14,
+    title: 'Blackjack Game',
+    category: 'python',
+    description:
+      'Blackjack Game is a simple card game where the player tries to get as close to 21 as possible without going over.',
+    image: '/blackjack-game.png',
+    githubLink:
+      'https://github.com/Balaganesh003/python-projects/tree/main/Black%20Jack',
+  },
 ];
 
 export default totalProjects;
