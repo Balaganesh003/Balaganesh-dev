@@ -11,8 +11,7 @@ const MailSideBar = () => {
       <div className="rotate-90 mb-20 w-10 py-[2.9rem] ">
         <Link
           href="/contact"
-          target="_new"
-          className="tracking-2 inline-block hover:-translate-x-1 transition-all  duration-200 cursor-pointer hover:text-secondary  ">
+          className="tracking-2 inline-block hover:-translate-x-1 transition-all  duration-200 cursor-pointer hover:text-secondary ">
           k.balaganesh26@gmail.com
         </Link>
       </div>

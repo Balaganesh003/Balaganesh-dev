@@ -33,7 +33,7 @@ const Navigation = () => {
         setIsSticky(false);
       }
     });
-  }, []);
+  }, [isSticky]);
 
   return (
     <div className="bg-primary w-full text-white">
@@ -69,7 +69,7 @@ const Navigation = () => {
         <div className="relative">
           <div
             className={`w-full ${
-              isSticky && 'shadow-2xl fixed inset-x-0 top-0'
+              isSticky && 'shadow-2xl fixed inset-x-0 top-0 z-[2]'
             } bg-primary flex justify-between h-[5rem] px-[1.5rem]`}>
             <div
               className="cursor-pointer flex items-center justify-center"
