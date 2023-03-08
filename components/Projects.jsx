@@ -22,14 +22,14 @@ const Projects = () => {
           ))}
         </div>
 
-        <a className="flex justify-center mt-16 md:mt-24 ">
+        <div className="flex justify-center mt-16 md:mt-24 ">
           <Link href="/projects">
             <span className="group text-base md:text-xl border-[1.5px] hover:bg-textGreen/5 border-textGreen  px-6 pl-10 py-3 rounded-lg  text-white transition-all duration-200 cursor-pointer">
               View All Projects
               <BsArrowRight className="text-xl ml-1 inline-block opacity-0 group-hover:animate-giggleRight group-hover:opacity-100 " />
             </span>
           </Link>
-        </a>
+        </div>
       </div>
     </div>
   );

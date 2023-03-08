@@ -61,7 +61,7 @@ const totalProjects = [
     id: 6,
     title: 'Find Coffee Stores',
     category: 'WebApp',
-    description: 'This is a coffee store finder app. ',
+    description: 'This is a coffee store finder app.',
     image: '/coffee-store.gif',
     githubLink: 'https://github.com/Balaganesh003/discover-coffee-stores',
   },

@@ -7,10 +7,12 @@ import AboutMe from '@/components/AboutMe';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import ContactMe from '@/components/ContactMe';
+import { fetchProjectsData } from '@/utils/FetchProjectData';
 
-export default function Home() {
+export default function Home({ projects }) {
   const [isStickyNav, setIsStickyNav] = useState(false);
 
+  console.log('props', projects);
   useEffect(() => {
     AOS.init();
   }, []);
@@ -59,3 +61,12 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const projects = await fetchProjectsData();
+  return {
+    props: {
+      projects,
+    },
+  };
+};
