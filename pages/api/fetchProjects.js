@@ -2,7 +2,7 @@ import { groq } from 'next-sanity';
 import { sanityClient } from '../../sanity';
 
 const ProjectQuery = groq`
-*[_type == "Project"]{
+*[_type == "project" || _type == "Project"]{
     _id,
     ...
 } | order(_createdAt desc)

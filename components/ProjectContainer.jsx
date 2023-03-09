@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ProjectItemCard from './ProjectItemCard';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-const ProjectContainer = () => {
+const ProjectContainer = (props) => {
+  const dispatch = useDispatch();
   const { projects, selectedCategory } = useSelector((state) => state.projects);
-
-  useEffect(() => {}, [selectedCategory]);
 
   return (
     <motion.div className="mt-10 gap-x-8 gap-y-5 xl:gap-x-16 xl:gap-y-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

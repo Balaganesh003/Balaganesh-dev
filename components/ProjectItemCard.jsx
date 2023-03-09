@@ -2,8 +2,21 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import imageUrlBuilder from '@sanity/image-url';
+
+const builder = imageUrlBuilder({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  useCdn: true,
+});
 
 const ProjectItemCard = ({ title, image, description, githubLink }) => {
+  const urlFor = (source) => {
+    return builder.image(source);
+  };
+
+  const imageSrc = urlFor(image).url();
+
   return (
     <Link target="_blank" href={githubLink}>
       <motion.div
@@ -15,7 +28,7 @@ const ProjectItemCard = ({ title, image, description, githubLink }) => {
         <div className=" object-cover">
           {image && (
             <Image
-              src={image}
+              src={imageSrc}
               alt="grocery-app"
               className="object-cover w-full h-[13rem] rounded-lg"
               width={500}

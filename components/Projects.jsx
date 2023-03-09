@@ -7,7 +7,7 @@ import { BsArrowRight } from 'react-icons/bs';
 const Projects = () => {
   return (
     <div id="project-section" className="pt-[7rem]">
-      <div
+      {/* <div
         data-aos="fade-up"
         data-aos-duration="1150"
         data-aos-once="true"
@@ -30,7 +30,7 @@ const Projects = () => {
             </span>
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
