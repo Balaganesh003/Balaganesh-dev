@@ -65,8 +65,8 @@ export default function Home(props) {
 
             <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
             <Skills />
-            {/* <hr className="h-px mx-auto mt-[2rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
-            <Projects /> */}
+            <hr className="h-px mx-auto mt-[2rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+            <Projects />
             <hr className="h-px mx-auto mt-[9rem] mb-[5rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
             <ContactMe />
           </div>

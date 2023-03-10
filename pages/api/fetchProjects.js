@@ -5,7 +5,7 @@ const ProjectQuery = groq`
 *[_type == "project" || _type == "Project"]{
     _id,
     ...
-} | order(_createdAt desc)
+}
 `;
 
 export default async function handler(req, res) {
