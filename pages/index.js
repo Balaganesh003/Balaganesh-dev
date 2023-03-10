@@ -15,13 +15,20 @@ import { projectActions } from '@/store/project-slice';
 export default function Home(props) {
   const dispatch = useDispatch();
   const [isStickyNav, setIsStickyNav] = useState(false);
-  const { isLoading } = useSelector((state) => state.projects);
+  const { isLoading, projects } = useSelector((state) => state.projects);
+
+  const fetchProjects = async () => {
+    dispatch(projectActions.setLoadingStatus(true));
+    const projects = await fetchProjectsData();
+    dispatch(projectActions.setProjects(projects));
+    dispatch(projectActions.setLoadingStatus(false));
+  };
 
   useEffect(() => {
-    dispatch(projectActions.setLoadingStatus(true));
-    dispatch(projectActions.setProjects(props.projects));
-    dispatch(projectActions.setLoadingStatus(false));
-  }, [dispatch]);
+    if (projects.length === 0 || !projects) {
+      fetchProjects();
+    }
+  }, [dispatch, projects]);
 
   useEffect(() => {
     AOS.init();
@@ -75,12 +82,3 @@ export default function Home(props) {
     </>
   );
 }
-
-export const getServerSideProps = async () => {
-  const projects = await fetchProjectsData();
-  return {
-    props: {
-      projects,
-    },
-  };
-};
