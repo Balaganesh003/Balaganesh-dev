@@ -23,25 +23,30 @@ const ScrollToTop = () => {
 
   return (
     <div className="hidden md:block">
-      <button
-        onClick={scrollToTop}
-        className={`fixed bottom-10 z-20 ${
-          showScroll && 'opacity-100 translate-y-0'
-        } md:right-[5rem] right-2 active:scale-95 transition-transform bg-slate-100/10 opacity-0 translate-y-[5rem] shadow-sm  text-white p-2 rounded-full  hover:bg-white/25`}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 "
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 10l7-7m0 0l7 7m-7-7v18"
-          />
-        </svg>
-      </button>
+      {showScroll && (
+        <button
+          data-aos="fade-up"
+          data-aos-duration="300"
+          data-aos-once="true"
+          onClick={scrollToTop}
+          className={`fixed bottom-10 z-20
+           opacity-100 translate-y-0
+         md:right-[5rem] right-2 active:scale-95 transition-transform bg-slate-100/10  shadow-sm  text-white p-2 rounded-full  hover:bg-white/25`}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 "
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
+          </svg>
+        </button>
+      )}
     </div>
   );
 };

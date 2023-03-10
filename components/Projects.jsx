@@ -17,9 +17,10 @@ const Projects = () => {
         </h1>
 
         <div className="flex items-center flex-col">
-          {projectData.map((project) => (
-            <ProjectItem project={project} key={project.id} />
-          ))}
+          {projectData &&
+            projectData.map((project) => (
+              <ProjectItem project={project} key={project.id} />
+            ))}
         </div>
 
         <a className="flex justify-center mt-16 md:mt-24 ">

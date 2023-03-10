@@ -76,14 +76,15 @@ const Skills = () => {
           Skills
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2  gap-x-12 gap-y-8">
-          {SkillsData.map((skill, index) => (
-            <SkillItem
-              key={index}
-              skillName={skill.skillName}
-              percentage={skill.percentage}
-              skillStrength={skill.skillStrength}
-            />
-          ))}
+          {SkillsData &&
+            SkillsData.map((skill, index) => (
+              <SkillItem
+                key={index}
+                skillName={skill.skillName}
+                percentage={skill.percentage}
+                skillStrength={skill.skillStrength}
+              />
+            ))}
         </div>
       </div>
     </div>

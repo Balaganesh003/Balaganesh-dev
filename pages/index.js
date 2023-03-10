@@ -15,13 +15,13 @@ import { projectActions } from '@/store/project-slice';
 export default function Home(props) {
   const dispatch = useDispatch();
   const [isStickyNav, setIsStickyNav] = useState(false);
-  const { isLoading, projects } = useSelector((state) => state.projects);
+  const { isLoading } = useSelector((state) => state.projects);
 
   useEffect(() => {
     dispatch(projectActions.setLoadingStatus(true));
     dispatch(projectActions.setProjects(props.projects));
     dispatch(projectActions.setLoadingStatus(false));
-  }, [dispatch]);
+  }, [dispatch, props.projects]);
 
   useEffect(() => {
     AOS.init();
