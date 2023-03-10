@@ -21,7 +21,7 @@ export default function Home(props) {
     dispatch(projectActions.setLoadingStatus(true));
     dispatch(projectActions.setProjects(props.projects));
     dispatch(projectActions.setLoadingStatus(false));
-  }, [dispatch, props.projects]);
+  }, [dispatch]);
 
   useEffect(() => {
     AOS.init();
