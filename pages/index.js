@@ -7,9 +7,21 @@ import AboutMe from '@/components/AboutMe';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import ContactMe from '@/components/ContactMe';
+import { fetchProjectsData } from '@/utils/FetchProjectData';
+import { useSelector, useDispatch } from 'react-redux';
+import Spinner from '@/components/Spinner';
+import { projectActions } from '@/store/project-slice';
 
-export default function Home() {
+export default function Home(props) {
+  const dispatch = useDispatch();
   const [isStickyNav, setIsStickyNav] = useState(false);
+  const { isLoading } = useSelector((state) => state.projects);
+
+  useEffect(() => {
+    dispatch(projectActions.setLoadingStatus(true));
+    dispatch(projectActions.setProjects(props.projects));
+    dispatch(projectActions.setLoadingStatus(false));
+  }, [dispatch, props.projects]);
 
   useEffect(() => {
     AOS.init();
@@ -34,28 +46,41 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
 
-      <main
-        className={`bg-primary h-full  flex flex-col  items-center  relative text-white px-[1.5rem] w-auto  md:px-[3.5rem]`}>
-        <div className={`md:px-[4.5rem]`}>
-          <div
-            className={`h-[calc(100vh-7rem)] min-h-[30rem] pb-[6rem] md:pb-0 xl:pb-[6rem]  items-center flex ${
-              isStickyNav && 'md:mt-[6rem] mt-[5rem]'
-            }`}>
-            <Header />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <main
+          className={`bg-primary h-full  flex flex-col  items-center  relative text-white px-[1.5rem] w-auto  md:px-[3.5rem]`}>
+          <div className={`md:px-[4.5rem]`}>
+            <div
+              className={`md:h-[calc(100vh-6rem)] h-[calc(100vh-5rem)]  min-h-[30rem] pb-[6rem] md:pb-0 xl:pb-[6rem]  items-center flex ${
+                isStickyNav && 'md:mt-[6rem] mt-[5rem]'
+              }`}>
+              <Header />
+            </div>
+
+            <hr className="h-px mx-auto my-[2rem] bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+
+            <AboutMe />
+
+            <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+            <Skills />
+            <hr className="h-px mx-auto mt-[2rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+            <Projects />
+            <hr className="h-px mx-auto mt-[9rem] mb-[5rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+            <ContactMe />
           </div>
-
-          <hr className="h-px mx-auto my-[2rem] bg-gray-100 border-0 rounded  dark:bg-gray-700" />
-
-          <AboutMe />
-
-          <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
-          <Skills />
-          <hr className="h-px mx-auto mt-[2rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
-          <Projects />
-          <hr className="h-px mx-auto mt-[9rem] mb-[5rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
-          <ContactMe />
-        </div>
-      </main>
+        </main>
+      )}
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const projects = await fetchProjectsData();
+  return {
+    props: {
+      projects,
+    },
+  };
+};

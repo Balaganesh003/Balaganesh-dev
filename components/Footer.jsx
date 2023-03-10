@@ -6,11 +6,15 @@ const Footer = () => {
   return (
     <div className="text-center pb-10 bg-primary pt-14 text-white ">
       <div className=" md:hidden pb-10 flex items-center justify-center  space-x-5 ">
-        {SocialLinksData.map((link, index) => (
-          <a key={index} target="_new" href={link.link}>
-            <link.Icon className="text-[1.8rem]  transition-all hover:text-secondary duration-200 hover:-translate-y-[2px] hover:scale-105 cursor-pointer" />
-          </a>
-        ))}
+        {SocialLinksData &&
+          SocialLinksData.map(
+            (link, index) =>
+              link.link && (
+                <a key={index} target="_new" href={link.link}>
+                  <link.Icon className="text-[1.8rem]  transition-all hover:text-secondary duration-200 hover:-translate-y-[2px] hover:scale-105 cursor-pointer" />
+                </a>
+              )
+          )}
       </div>
       <p className="text-HeadingGray  hover:text-HeadingBlue  transition-all duration-300 cursor-pointer text-base">
         Made in <AiFillHeart className="inline mx-[0.15rem]" /> with Balaganesh

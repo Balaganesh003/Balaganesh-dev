@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavItem from './NavItem';
 import Image from 'next/image';
 import { MdSegment, MdClear } from 'react-icons/md';
@@ -48,14 +48,15 @@ const Navigation = () => {
           </Link>
         </div>
         <ul className="flex flex-row  items-center justify-center">
-          {navItems.map(({ text, link }, index) => (
-            <NavItem
-              key={index}
-              text={text}
-              link={link}
-              delay={50 * (index + 1)}
-            />
-          ))}
+          {navItems &&
+            navItems.map(({ text, link }, index) => (
+              <NavItem
+                key={index}
+                text={text}
+                link={link}
+                delay={50 * (index + 1)}
+              />
+            ))}
           <span
             data-aos="fade-down"
             data-aos-duration="1250"
@@ -101,15 +102,16 @@ const Navigation = () => {
               </button>
             </div>
             <ul className="flex  flex-col space-y-5 items-center justify-center w-full">
-              {navItems.map(({ text, link }, index) => (
-                <NavItem
-                  toggleNav={handleNavToggle}
-                  key={index}
-                  text={text}
-                  link={link}
-                  delay={50 * (index + 1)}
-                />
-              ))}
+              {navItems &&
+                navItems.map(({ text, link }, index) => (
+                  <NavItem
+                    toggleNav={handleNavToggle}
+                    key={index}
+                    text={text}
+                    link={link}
+                    delay={50 * (index + 1)}
+                  />
+                ))}
             </ul>
           </div>
         </div>
