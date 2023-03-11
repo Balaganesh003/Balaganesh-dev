@@ -17,7 +17,13 @@ const Footer = () => {
           )}
       </div>
       <p className="text-HeadingGray  hover:text-HeadingBlue  transition-all duration-300 cursor-pointer text-base">
-        Made in <AiFillHeart className="inline mx-[0.15rem]" /> with Balaganesh
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/Balaganesh003/Balaganesh-dev">
+          Made in <AiFillHeart className="inline mx-[0.15rem]" /> with
+          Balaganesh
+        </a>
       </p>
     </div>
   );
