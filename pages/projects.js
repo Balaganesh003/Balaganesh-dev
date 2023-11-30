@@ -87,7 +87,7 @@ const Projects = ({ projectsData }) => {
               python
             </div>
           </div>
-          <ProjectContainer />
+          {isLoading ? <Spinner /> : <ProjectContainer />}
         </div>
       )}
     </>
