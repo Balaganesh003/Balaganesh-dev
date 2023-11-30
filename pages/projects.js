@@ -5,25 +5,20 @@ import { projectActions } from '@/store/project-slice';
 import { fetchProjectsData } from '@/utils/FetchProjectData';
 import Spinner from '@/components/Spinner';
 
-const Projects = () => {
+const Projects = ({ projectsData }) => {
   const dispatch = useDispatch();
   const [isStickyNav, setIsStickyNav] = useState(false);
   const { projects, selectedCategory, isLoading } = useSelector(
     (state) => state.projects
   );
 
-  const fetchProjects = async () => {
-    dispatch(projectActions.setLoadingStatus(true));
-    const projects = await fetchProjectsData();
-    dispatch(projectActions.setProjects(projects));
-    dispatch(projectActions.setLoadingStatus(false));
-  };
-
   useEffect(() => {
-    if (projects.length === 0 || !projects) {
-      fetchProjects();
+    if (!projects || projects.length === 0) {
+      dispatch(projectActions.setLoadingStatus(true));
+      dispatch(projectActions.setProjects(projectsData));
+      dispatch(projectActions.setLoadingStatus(false));
     }
-  }, [dispatch, projects]);
+  }, [dispatch, projects, projectsData]);
 
   const handleCategory = (category) => {
     dispatch(projectActions.setCategory(category));
@@ -98,5 +93,13 @@ const Projects = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const projectsData = await fetchProjectsData();
+  return {
+    props: { projectsData },
+    revalidate: 360000,
+  };
+}
 
 export default Projects;
