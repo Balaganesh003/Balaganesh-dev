@@ -1,18 +1,31 @@
 import React from 'react';
 import Image from 'next/image';
+import imageUrlBuilder from '@sanity/image-url';
 
-const ProjectItem = ({ project }) => {
+const builder = imageUrlBuilder({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  useCdn: true,
+});
+
+const ProjectItem = ({ project, index }) => {
+  const urlFor = (source) => {
+    return builder.image(source);
+  };
+
+  const imageSrc = urlFor(project.image).url();
+
   return (
     <div
       className={`flex max-w-sm md:max-w-none  first:mt-[3rem] md:first:mt-[5rem] mt-[5rem] flex-col ${
-        project.id % 2 == 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+        index % 2 == 0 ? 'md:flex-row-reverse' : 'md:flex-row'
       } border-gray-800 border shadow-lg md:border-none md:shadow-none rounded-lg px-5  py-5 lg:px-0 lg:py-0  gap-10`}>
       <div className=" max-w-md  md:flex-1 ">
         <Image
           className="rounded-lg mt-5 lg:h-[14rem] object-cover w-full"
           width={400}
           height={300}
-          src={project.image}
+          src={imageSrc}
           alt={project.title}
         />
       </div>
@@ -21,14 +34,14 @@ const ProjectItem = ({ project }) => {
           {project.title}
         </h1>
         <p className="text-HeadingGray">{project.description}</p>
-        <div className="flex  gap-x-10 gap-y-5 mt-4 flex-wrap">
+        {/* <div className="flex  gap-x-10 gap-y-5 mt-4 flex-wrap">
           {project.techStack.map((tech, i) => (
             <p key={i} className="flex items-center text-lg ">
               <span className="mr-2 text-teal-500 font-bold text-xl">&gt;</span>
               {tech}
             </p>
           ))}
-        </div>
+        </div> */}
         <div className="flex gap-5 items-center justify-around">
           <a href={project.githubLink} target="_blank" rel="noreferrer">
             <button className="py-2 px-4 mt-10 lg:w-[9rem] w-[7rem] border-HeadingBlue border-2 rounded-full cursor-pointer hover:border-cyan-500 transition-all duration-200 hover:bg-cyan-300/5 active:scale-95">

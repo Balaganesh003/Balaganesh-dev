@@ -18,7 +18,7 @@ const AboutMe = () => {
           <div className="flex-1 max-w-sm mx-auto flex">
             <div className="lg:w-[25rem] max-w-lg p-4">
               <Image
-                src="/balaganesh-dev-1.jpeg"
+                src="/balaganesh-dev-1.webp"
                 width={500}
                 height={500}
                 alt="My Logo"
