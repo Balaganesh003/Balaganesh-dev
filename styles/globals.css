@@ -6,6 +6,12 @@
   scrollbar-color: hsl(249, 3%, 46%);
 }
 
+div,
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @tailwind base;
 
 html {

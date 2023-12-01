@@ -2,10 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialProjectState = {
   projects: [],
-  selectedProject: [],
   selectedCategory: 'All',
   isLoading: true,
-  error: null,
 };
 
 const projectSlice = createSlice({

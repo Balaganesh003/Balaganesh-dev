@@ -31,7 +31,7 @@ const ProjectItemCard = ({ title, image, description, githubLink }) => {
               <Image
                 src={imageSrc}
                 alt="grocery-app"
-                className="object-cover  w-full h-[13rem] rounded-lg"
+                className="object-cover  w-full max-h-[13rem] aspect-video rounded-lg"
                 width={500}
                 height={400}
               />

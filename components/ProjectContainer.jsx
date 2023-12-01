@@ -13,7 +13,7 @@ const ProjectContainer = () => {
 
   return (
     <div className="mt-10 gap-x-8 gap-y-5 xl:gap-x-16 xl:gap-y-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {projects.length !== 0 &&
+      {projects?.length !== 0 &&
         projects &&
         projects
           .filter(

@@ -42,7 +42,7 @@ const Navigation = () => {
           isSticky && 'shadow-2xl fixed inset-x-0 top-0  z-50 '
         }`}>
         {/* Desktop */}
-        <div className="cursor-pointer">
+        <div className="cursor-pointer active:scale-90 duration-200">
           <Link onClick={ScrollToTop} href="/" className="cursor-pointer">
             <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
           </Link>
@@ -73,7 +73,7 @@ const Navigation = () => {
               isSticky && 'shadow-2xl fixed inset-x-0 top-0 z-[2]'
             } bg-primary flex justify-between h-[5rem] px-[1.5rem]`}>
             <div
-              className="cursor-pointer flex items-center justify-center"
+              className="cursor-pointer active:scale-90 transition-all duration-200 flex items-center justify-center"
               onClick={ScrollToTop}>
               <Link href="/">
                 <Image src="/logo.svg" alt="My Logo" width={28} height={28} />
@@ -84,7 +84,7 @@ const Navigation = () => {
             <button className="cursor-pointer ">
               <MdSegment
                 onClick={handleNavToggle}
-                className="text-white text-4xl z-50 active:rotate-90 transition-all duration-100"
+                className="text-white text-4xl active:rotate-90 z-50 transition-all duration-100"
               />
             </button>
           </div>
