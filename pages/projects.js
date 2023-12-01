@@ -108,7 +108,6 @@ export async function getStaticProps() {
 
   return {
     props: { projectsData: updatedProjectsData },
-    revalidate: 36000,
   };
 }
 
