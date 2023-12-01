@@ -26,9 +26,9 @@ export default function Home({ projectsData }) {
   const { isLoading, projects } = useSelector((state) => state.projects);
 
   useEffect(() => {
-    dispatch(projectActions.setProjects(projects));
+    dispatch(projectActions.setProjects(projectsData));
     dispatch(projectActions.setLoadingStatus(false));
-  }, [dispatch, projects]);
+  }, [dispatch, projectsData]);
 
   useEffect(() => {
     AOS.init();
