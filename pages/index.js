@@ -16,16 +16,13 @@ import GenerateImageUrl from '../utils/GetImageUrl';
 export async function getStaticProps() {
   const projectsData = await fetchProjectsData();
 
-  // Await all promises from GenerateImageUrl
-  const updatedProjectsData = await Promise.all(
-    projectsData.map(async (obj) => {
-      const imageUrl = await GenerateImageUrl(obj);
-      return {
-        ...obj,
-        imageUrl,
-      };
-    })
-  );
+  // Generate image URLs
+  const updatedProjectsData = projectsData.map((obj) => {
+    return {
+      ...obj,
+      imageUrl: GenerateImageUrl(obj),
+    };
+  });
 
   return {
     props: { projectsData: updatedProjectsData },

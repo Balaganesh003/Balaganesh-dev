@@ -6,9 +6,8 @@ const builder = imageUrlBuilder({
   useCdn: true,
 });
 
-const GenerateImageUrl = async (project) => {
-  const imgUrl = builder.image(project.image);
-  return imgUrl.url();
+const GenerateImageUrl = (project) => {
+  return builder.image(project.image).url();
 };
 
 export default GenerateImageUrl;
