@@ -1,20 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import imageUrlBuilder from '@sanity/image-url';
-
-const builder = imageUrlBuilder({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  useCdn: true,
-});
 
 const ProjectItem = ({ project, index }) => {
-  const urlFor = (source) => {
-    return builder.image(source);
-  };
-
-  const imageSrc = urlFor(project.image).url();
-
   return (
     <div
       className={`flex max-w-sm md:max-w-none  first:mt-[3rem] md:first:mt-[5rem] mt-[5rem] flex-col ${
@@ -25,7 +12,7 @@ const ProjectItem = ({ project, index }) => {
           className="rounded-lg mt-5 lg:h-[14rem] object-cover w-full"
           width={400}
           height={300}
-          src={imageSrc}
+          src={project.imageUrl}
           alt={project.title}
         />
       </div>

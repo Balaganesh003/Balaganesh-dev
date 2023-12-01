@@ -21,11 +21,11 @@ const ProjectContainer = () => {
               project.categories[0]._ref ===
                 categoryVariants[selectedCategory] || selectedCategory === 'All'
           )
-          .map(({ title, image, description, githubLink }, i) => (
+          .map(({ title, imageUrl, description, githubLink }, i) => (
             <ProjectItemCard
               key={i * 99}
               title={title}
-              image={image}
+              imageUrl={imageUrl}
               description={description}
               githubLink={githubLink}
             />

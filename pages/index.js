@@ -11,11 +11,24 @@ import { fetchProjectsData } from '@/utils/FetchProjectData';
 import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '@/components/Spinner';
 import { projectActions } from '@/store/project-slice';
+import GenerateImageUrl from '../utils/GetImageUrl';
 
 export async function getStaticProps() {
   const projectsData = await fetchProjectsData();
+
+  // Await all promises from GenerateImageUrl
+  const updatedProjectsData = await Promise.all(
+    projectsData.map(async (obj) => {
+      const imageUrl = await GenerateImageUrl(obj);
+      return {
+        ...obj,
+        imageUrl,
+      };
+    })
+  );
+
   return {
-    props: { projectsData },
+    props: { projectsData: updatedProjectsData },
     revalidate: 36000,
   };
 }
