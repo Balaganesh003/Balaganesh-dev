@@ -27,15 +27,10 @@ const ProjectQuery = groq`
 `;
 
 export default async function handler(req, res) {
-  try {
-    const projects = await sanityClient.fetch(ProjectQuery);
-    // const projectsWithImageUrl = projects.map((project) => ({
-    //   ...project,
-    //   imageUrl: project.image ? urlFor(project.image) : null,
-    // }));
-    res.status(200).json(projects);
-  } catch (error) {
-    console.error('Fetch error:', error);
-    res.status(500).json({ message: 'Error fetching projects' });
-  }
+  const projects = await sanityClient.fetch(ProjectQuery);
+  const projectsWithImageUrl = projects.map((project) => ({
+    ...project,
+    imageUrl: project.image ? urlFor(project.image) : null,
+  }));
+  res.status(200).json(projectsWithImageUrl);
 }
