@@ -8,5 +8,4 @@
 - Redux
 - Framer Motion
 
-
 [Go Live](https://balaganesh-dev.vercel.app/)
