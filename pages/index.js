@@ -23,12 +23,12 @@ export async function getStaticProps() {
 export default function Home({ projectsData }) {
   const dispatch = useDispatch();
   const [isStickyNav, setIsStickyNav] = useState(false);
-  const { isLoading } = useSelector((state) => state.projects);
+  const { isLoading, projects } = useSelector((state) => state.projects);
 
   useEffect(() => {
     dispatch(projectActions.setProjects(projectsData));
     dispatch(projectActions.setLoadingStatus(false));
-  }, [dispatch, projectsData]);
+  }, [dispatch, projectsData, projects]);
 
   useEffect(() => {
     AOS.init();

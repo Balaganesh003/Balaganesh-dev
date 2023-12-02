@@ -5,6 +5,14 @@ import { projectActions } from '@/store/project-slice';
 import { fetchProjectsData } from '@/utils/FetchProjectData';
 import Spinner from '@/components/Spinner';
 
+export async function getStaticProps() {
+  const projectsData = await fetchProjectsData();
+
+  return {
+    props: { projectsData },
+  };
+}
+
 const Projects = ({ projectsData }) => {
   const dispatch = useDispatch();
   const [isStickyNav, setIsStickyNav] = useState(false);
@@ -13,16 +21,12 @@ const Projects = ({ projectsData }) => {
   );
 
   useEffect(() => {
-    async function fetchData() {
+    if (!projects || projects.length == 0) {
       dispatch(projectActions.setLoadingStatus(true));
-      const projectData = await fetchProjectsData();
-      dispatch(projectActions.setProjects(projectData));
+      dispatch(projectActions.setProjects(projectsData));
       dispatch(projectActions.setLoadingStatus(false));
     }
-    if (!projects || projects.length == 0) {
-      fetchData();
-    }
-  }, [dispatch, projects, projectsData]);
+  }, [projectsData]);
 
   const handleCategory = (category) => {
     dispatch(projectActions.setCategory(category));
