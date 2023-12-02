@@ -4,7 +4,7 @@ import imageUrlBuilder from '@sanity/image-url';
 
 // Function to build the image URL from the image asset reference
 function urlFor(source) {
-  return imageUrlBuilder(sanityClient).image(source);
+  return imageUrlBuilder(sanityClient).image(source).url();
 }
 
 const ProjectQuery = groq`
