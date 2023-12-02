@@ -13,14 +13,10 @@ import Spinner from '@/components/Spinner';
 import { projectActions } from '@/store/project-slice';
 
 export async function getStaticProps() {
-  const { projects } = useSelector((state) => state.projects)
-  if (!projects) {
-
-    const projectsData = await fetchProjectsData();
-  }
+  const projectsData = await fetchProjectsData();
 
   return {
-    props: { projectsData || projects },
+    props: { projectsData },
   };
 }
 
