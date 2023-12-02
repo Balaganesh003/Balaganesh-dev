@@ -14,18 +14,14 @@ const Projects = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
-      try {
-        dispatch(projectActions.setLoadingStatus(true));
-        const projectsData = await fetchProjectsData();
-        dispatch(projectActions.setProjects(projectsData));
-      } catch (error) {
-        console.error('Failed to fetch projects:', error);
-      } finally {
-        dispatch(projectActions.setLoadingStatus(false));
-      }
+      dispatch(projectActions.setLoadingStatus(true));
+      const projectsData = await fetchProjectsData();
+      dispatch(projectActions.setProjects(projectsData));
+
+      dispatch(projectActions.setLoadingStatus(false));
     };
 
-    if (projects.length === 0) {
+    if (projects.length === 0 || !projects) {
       fetchProjects();
     }
   }, [dispatch, projects]);
