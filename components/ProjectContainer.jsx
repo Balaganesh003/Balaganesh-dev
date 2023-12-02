@@ -3,9 +3,9 @@ import ProjectItemCard from './ProjectItemCard';
 import { useSelector } from 'react-redux';
 
 const categoryVariants = {
-  python: '583a7826-c467-4de3-9083-fd406157b557',
-  WebApp: '264a17e3-6587-4d87-b6dc-a7fe39fcacf0',
-  WebPage: '854a6450-6537-40af-9d30-c6635fe2dd88',
+  python: 'python',
+  WebApp: 'webApp',
+  WebPage: 'webPage',
 };
 
 const ProjectContainer = () => {
@@ -18,7 +18,7 @@ const ProjectContainer = () => {
         projects
           .filter(
             (project) =>
-              project.categories[0]._ref ===
+              project.categories[0].title ===
                 categoryVariants[selectedCategory] || selectedCategory === 'All'
           )
           .map(({ title, imageUrl, description, githubLink }, i) => (

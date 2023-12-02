@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { projectActions } from '@/store/project-slice';
 import { fetchProjectsData } from '@/utils/FetchProjectData';
 import Spinner from '@/components/Spinner';
-import GenerateImageUrl from '../utils/GetImageUrl';
 
 const Projects = ({ projectsData }) => {
   const dispatch = useDispatch();
@@ -98,16 +97,8 @@ const Projects = ({ projectsData }) => {
 export async function getStaticProps() {
   const projectsData = await fetchProjectsData();
 
-  // Generate image URLs
-  const updatedProjectsData = projectsData.map((obj) => {
-    return {
-      ...obj,
-      imageUrl: GenerateImageUrl(obj),
-    };
-  });
-
   return {
-    props: { projectsData: updatedProjectsData },
+    props: { projectsData },
   };
 }
 

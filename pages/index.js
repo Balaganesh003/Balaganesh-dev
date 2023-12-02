@@ -11,21 +11,16 @@ import { fetchProjectsData } from '@/utils/FetchProjectData';
 import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '@/components/Spinner';
 import { projectActions } from '@/store/project-slice';
-import GenerateImageUrl from '../utils/GetImageUrl';
 
 export async function getStaticProps() {
-  const projectsData = await fetchProjectsData();
+  const { projects } = useSelector((state) => state.projects)
+  if (!projects) {
 
-  // Generate image URLs
-  const updatedProjectsData = projectsData.map((obj) => {
-    return {
-      ...obj,
-      imageUrl: GenerateImageUrl(obj),
-    };
-  });
+    const projectsData = await fetchProjectsData();
+  }
 
   return {
-    props: { projectsData: updatedProjectsData },
+    props: { projectsData || projects },
   };
 }
 
