@@ -7,7 +7,8 @@ const DownloadPdfButton = ({ toggleNav }) => {
       type="button"
       className="active:scale-95 md:ml-5 transition-all duration-200">
       <a
-        href="./resume-balaganesh.pdf"
+        href="https://drive.google.com/file/d/1BC_RzrHZHzsgl5Cc96rzPwQ99zvt2LyB/view?usp=sharing"
+        target="_blank"
         download
         className=" tracking-wide text-base px-8 py-2 md:py-2 md:px-5  border-HeadingBlue border-2 rounded-md cursor-pointer hover:border-cyan-500 text-[1.1rem] hover:bg-cyan-300/5  inline-block">
         Resume

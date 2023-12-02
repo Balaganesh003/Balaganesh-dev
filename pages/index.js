@@ -14,16 +14,16 @@ import { projectActions } from '@/store/project-slice';
 
 export async function getStaticProps() {
   const projectsData = await fetchProjectsData();
+
   return {
     props: { projectsData },
-    revalidate: 36000,
   };
 }
 
 export default function Home({ projectsData }) {
   const dispatch = useDispatch();
   const [isStickyNav, setIsStickyNav] = useState(false);
-  const { isLoading, projects } = useSelector((state) => state.projects);
+  const { isLoading } = useSelector((state) => state.projects);
 
   useEffect(() => {
     dispatch(projectActions.setProjects(projectsData));

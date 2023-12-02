@@ -1,10 +1,22 @@
 import React from 'react';
 import ProjectItem from './ProjectItem';
-import projectData from '@/projectData';
 import Link from 'next/link';
 import { BsArrowRight } from 'react-icons/bs';
+import { useSelector } from 'react-redux';
+
+const mainProjects = [
+  'bccf2959-3243-43c5-ac15-669f88de2293',
+  '0168f832-b54e-4225-b5f5-4c3ebd1ad00b',
+  'c225cf9d-985b-46e3-8718-d96bb11ee271',
+];
 
 const Projects = () => {
+  const { projects } = useSelector((state) => state.projects);
+
+  const filterProjects = projects.filter((pro) =>
+    mainProjects.includes(pro._id)
+  );
+
   return (
     <div id="project-section" className="pt-[7rem]">
       <div
@@ -17,9 +29,13 @@ const Projects = () => {
         </h1>
 
         <div className="flex items-center flex-col">
-          {projectData &&
-            projectData.map((project) => (
-              <ProjectItem project={project} key={project.id} />
+          {filterProjects &&
+            filterProjects.map((project, index) => (
+              <ProjectItem
+                project={project}
+                key={project._id}
+                index={index + 1}
+              />
             ))}
         </div>
 

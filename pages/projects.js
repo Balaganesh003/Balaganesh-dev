@@ -96,9 +96,9 @@ const Projects = ({ projectsData }) => {
 
 export async function getStaticProps() {
   const projectsData = await fetchProjectsData();
+
   return {
     props: { projectsData },
-    revalidate: 360000,
   };
 }
 
