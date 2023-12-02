@@ -13,10 +13,14 @@ const Projects = ({ projectsData }) => {
   );
 
   useEffect(() => {
-    if (!projects || projects.length === 0) {
+    async function fetchData() {
       dispatch(projectActions.setLoadingStatus(true));
-      dispatch(projectActions.setProjects(projectsData));
+      const projectData = await fetchProjectsData();
+      dispatch(projectActions.setProjects(projectData));
       dispatch(projectActions.setLoadingStatus(false));
+    }
+    if (!projects || projects.length == 0) {
+      fetchData();
     }
   }, [dispatch, projects, projectsData]);
 
@@ -93,13 +97,5 @@ const Projects = ({ projectsData }) => {
     </>
   );
 };
-
-export async function getStaticProps() {
-  const projectsData = await fetchProjectsData();
-
-  return {
-    props: { projectsData },
-  };
-}
 
 export default Projects;
