@@ -5,7 +5,7 @@ import { projectActions } from '@/store/project-slice';
 import { fetchProjectsData } from '@/utils/FetchProjectData';
 import Spinner from '@/components/Spinner';
 
-const Projects = ({ projectsData }) => {
+const Projects = () => {
   const dispatch = useDispatch();
   const [isStickyNav, setIsStickyNav] = useState(false);
   const { projects, selectedCategory, isLoading } = useSelector(
@@ -13,12 +13,22 @@ const Projects = ({ projectsData }) => {
   );
 
   useEffect(() => {
-    if (!projects || projects.length === 0) {
-      dispatch(projectActions.setLoadingStatus(true));
-      dispatch(projectActions.setProjects(projectsData));
-      dispatch(projectActions.setLoadingStatus(false));
+    const fetchProjects = async () => {
+      try {
+        dispatch(projectActions.setLoadingStatus(true));
+        const projectsData = await fetchProjectsData();
+        dispatch(projectActions.setProjects(projectsData));
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+      } finally {
+        dispatch(projectActions.setLoadingStatus(false));
+      }
+    };
+
+    if (projects.length === 0) {
+      fetchProjects();
     }
-  }, [dispatch, projects, projectsData]);
+  }, [dispatch, projects]);
 
   const handleCategory = (category) => {
     dispatch(projectActions.setCategory(category));
@@ -93,13 +103,5 @@ const Projects = ({ projectsData }) => {
     </>
   );
 };
-
-export async function getStaticProps() {
-  const projectsData = await fetchProjectsData();
-
-  return {
-    props: { projectsData },
-  };
-}
 
 export default Projects;
