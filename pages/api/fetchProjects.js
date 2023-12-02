@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     const projects = await sanityClient.fetch(ProjectQuery);
     const projectsWithImageUrl = projects.map((project) => ({
       ...project,
-      imageUrl: project.image ? urlFor(project.image).url() : null,
+      imageUrl: project.image ? urlFor(project.image) : null,
     }));
     res.status(200).json(projectsWithImageUrl);
   } catch (error) {
