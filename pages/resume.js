@@ -29,7 +29,7 @@ const Resume = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center min-h-screen items-center bg-primary overflow-x-hidden gap-6 pt-8">
+    <div className="flex flex-col text-white min-h-screen items-center justify-start bg-primary overflow-x-hidden gap-6 pt-8">
       <h1 className="text-xl md:text-4xl uppercase text-center text-white">
         Resume
       </h1>
