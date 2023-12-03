@@ -2,7 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  /* config options here */
+  // Your existing config options
   images: {
     remotePatterns: [
       {
@@ -10,6 +10,28 @@ const nextConfig = {
         hostname: 'cdn.sanity.io',
       },
     ],
+  },
+
+  // Adding webpack configuration
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Configure file-loader for .pdf files
+      config.module.rules.push({
+        test: /\.pdf$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              publicPath: '/_next/static/files',
+              outputPath: 'static/files',
+            },
+          },
+        ],
+      });
+    }
+
+    return config;
   },
 };
 

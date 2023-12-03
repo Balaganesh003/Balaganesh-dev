@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import DownloadPdfButton from './DownloadButton';
+import DownloadPdfButton from './ResumeButton';
 import Image from 'next/image';
 
 const AboutMe = () => {

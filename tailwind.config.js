@@ -56,10 +56,22 @@ module.exports = {
             transform: 'translateX(0px)',
           },
         },
+        giggleDown: {
+          '0%': {
+            transform: 'translateY(0px)',
+          },
+          '50%': {
+            transform: 'translateY(5px)',
+          },
+          '100%': {
+            transform: 'translateY(0px)',
+          },
+        },
       },
       animation: {
-        giggleLeft: 'giggleLeft 300ms ease-in-out',
+        giggleLeft: 'giggleLeft 300ms ease-in-out ',
         giggleRight: 'giggleRight 300ms ease-in-out',
+        giggleDown: 'giggleDown  1000ms ease-in-out infinite',
       },
     },
   },
