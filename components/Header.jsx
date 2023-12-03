@@ -4,7 +4,7 @@ import React from 'react';
 const Header = () => {
   return (
     <div data-aos="fade-right" data-aos-duration="1600" data-aos-delay="1100">
-      <h1 className="md:tracking-1 tracking-widest py-2 text-[0.75rem] md:text-xs  text-HeadingGray uppercase">
+      <h1 className="md:tracking-1 tracking-widest py-2 mt-12  text-[0.75rem] md:text-xs  text-HeadingGray uppercase">
         Hi, My name is
       </h1>
       <h1 className="xl:text-7xl mt-2 lg:6xl md:text-[2.9rem] text-3xl font-bold ">
