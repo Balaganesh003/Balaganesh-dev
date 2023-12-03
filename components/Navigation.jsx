@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavItem from './NavItem';
 import Image from 'next/image';
 import { MdSegment, MdClear } from 'react-icons/md';
-import DownloadPdfButton from './DownloadButton';
+import ResumeButton from './ResumeButton';
 import navItems from '@/navItems';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
@@ -62,7 +62,7 @@ const Navigation = () => {
             data-aos="fade-down"
             data-aos-duration="1250"
             data-aos-delay="200">
-            <DownloadPdfButton />
+            <ResumeButton />
           </span>
         </ul>
       </div>
@@ -92,7 +92,7 @@ const Navigation = () => {
           </div>
 
           <div
-            className={` right-0 top-0 z-[2] transition-transform duration-200 delay-100 ${
+            className={` right-0 top-0 z-[10] transition-transform duration-200 delay-100 ${
               isNavOpen ? 'translate-x-0' : 'translate-x-[100%]'
             } fixed h-screen min-h-fit overflow-y-scroll w-[60%]   bg-bgNavy scrollbar-hide`}>
             <div className="px-[1.5rem] w-full py-6 text-right">
@@ -114,6 +114,7 @@ const Navigation = () => {
                     delay={50 * (index + 1)}
                   />
                 ))}
+              <ResumeButton toggleNav={handleNavToggle} />
             </ul>
           </div>
         </div>

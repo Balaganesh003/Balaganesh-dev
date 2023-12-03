@@ -58,10 +58,11 @@ export default function Home({ projectsData }) {
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className={`md:px-[4.5rem]`}>
+          <div
+            className={`md:px-[4.5rem]  transition-all duration-300 ease-in-out`}>
             <div
-              className={`md:h-[calc(100vh-6rem)] h-[calc(100vh-5rem)]  min-h-[30rem] pb-[8rem] md:pb-0 xl:pb-[6rem]  items-center flex ${
-                isStickyNav && 'md:mt-[6rem] mt-[5rem]'
+              className={`h-[calc(100dvh-5rem)] min-h-fit flex items-start xl:items-center xl:pb-[5rem] ${
+                isStickyNav && 'mt-[5rem]'
               }`}>
               <Header />
             </div>

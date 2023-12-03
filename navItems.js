@@ -6,12 +6,12 @@ const navItems = [
   },
 
   {
-    id: 3,
+    id: 2,
     text: 'Projects',
     link: '/projects',
   },
   {
-    id: 4,
+    id: 3,
     text: 'Contact Me',
     link: '/contact',
   },
