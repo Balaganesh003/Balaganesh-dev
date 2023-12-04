@@ -4,7 +4,7 @@ import SocialLinksData from '@/socialLinksData';
 
 const Footer = () => {
   return (
-    <div className="text-center pb-10 bg-primary pt-14 text-white ">
+    <div className="text-center pb-10 bg-primary pt-5 text-white ">
       <div className=" md:hidden pb-10 flex items-center justify-center  space-x-5 ">
         {SocialLinksData &&
           SocialLinksData.map(
