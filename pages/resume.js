@@ -9,6 +9,7 @@ const Resume = () => {
   const [scale, setScale] = useState(1);
   const [width, setWidth] = useState(786);
   const [isScrolledFull, setIsScrolledFull] = useState(false);
+  const [isStickyNav, setIsStickyNav] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,8 +52,21 @@ const Resume = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 96) {
+        setIsStickyNav(true);
+      } else {
+        setIsStickyNav(false);
+      }
+    });
+  }, []);
+
   return (
-    <div className="flex flex-col text-white md:min-h-screen items-center justify-start bg-primary overflow-x-hidden overflow-y-hidden pb-10 gap-6 pt-8 relative">
+    <div
+      className={`flex flex-col text-white md:min-h-screen items-center justify-start bg-primary overflow-x-hidden overflow-y-hidden pb-10 gap-6 pt-8 relative ${
+        isStickyNav && 'mt-[5rem]'
+      }`}>
       <h1 className="text-xl md:text-4xl uppercase text-center text-white">
         Resume
       </h1>

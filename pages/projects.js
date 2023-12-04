@@ -49,7 +49,7 @@ const Projects = ({ projectsData }) => {
       ) : (
         <div
           className={`bg-primary min-h-screen overflow-hidden px-[1.5rem] md:px-[7rem] xl:px-[10rem] text-white ${
-            isStickyNav && 'md:mt-[5rem] mt-[5rem]'
+            isStickyNav && 'mt-[5rem]'
           } `}>
           <h1 className="text-4xl uppercase text-center py-5 pb-10">
             My Works
