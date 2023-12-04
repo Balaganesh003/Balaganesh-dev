@@ -7,6 +7,7 @@ import ResumeDownload from '@/components/ResumeDownload';
 
 const Resume = () => {
   const [scale, setScale] = useState(1);
+  const [width, setWidth] = useState(786);
   const [isScrolledFull, setIsScrolledFull] = useState(false);
 
   useEffect(() => {
@@ -17,7 +18,8 @@ const Resume = () => {
         document.documentElement.scrollHeight;
 
       // Check if the user is within 40px of the bottom
-      const isNearBottom = distanceFromBottom >= -72;
+      const isNearBottom =
+        width >= 786 ? distanceFromBottom >= -64 : distanceFromBottom >= -193;
       setIsScrolledFull(isNearBottom);
     };
 
@@ -32,6 +34,7 @@ const Resume = () => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       const baseWidth = 786; // Base width for scale 1
+      setWidth(screenWidth);
       const scaleFactor = screenWidth / baseWidth;
 
       // Set the scale, limiting to a maximum of 1.5 and a minimum of 0.5
@@ -65,7 +68,7 @@ const Resume = () => {
       <div
         className={`${
           isScrolledFull
-            ? 'md:absolute md:bottom-5 fixed bottom-[10rem]'
+            ? 'absolute md:bottom-5 bottom-[1rem]'
             : 'fixed bottom-10'
         }  left-1/2 -translate-x-1/2 shadow-lg z-[10]`}>
         <ResumeDownload />
