@@ -72,8 +72,8 @@ export default function Home({ projectsData }) {
 
             <AboutMe />
 
-            {/* <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" /> */}
-            {/* <DaysICode /> */}
+            <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+            <DaysICode />
             <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
 
             <Skills />

@@ -12,7 +12,7 @@ const DaysICode = () => {
       <h1 className="uppercase text-HeadingGray text-xl text-center mb-10  duration-200 transition-all  hover:text-gray-200">
         Days I code
       </h1>
-      <div className="scale-50">
+      <div className="">
         <GitHubCalendar
           username="Balaganesh003"
           colorScheme="dark"
