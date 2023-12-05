@@ -11,6 +11,7 @@ import { fetchProjectsData } from '@/utils/FetchProjectData';
 import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '@/components/Spinner';
 import { projectActions } from '@/store/project-slice';
+import DaysICode from '@/components/DaysICode';
 
 export async function getStaticProps() {
   const projectsData = await fetchProjectsData();
@@ -54,7 +55,7 @@ export default function Home({ projectsData }) {
       </Head>
 
       <main
-        className={`bg-primary h-full  flex flex-col  items-center  relative text-white px-[1.5rem] w-auto  md:px-[3.5rem]`}>
+        className={`bg-primary h-full  flex flex-col   items-center  relative  text-white px-[1.5rem]   md:px-[3.5rem]`}>
         {isLoading ? (
           <Spinner />
         ) : (
@@ -71,7 +72,10 @@ export default function Home({ projectsData }) {
 
             <AboutMe />
 
+            {/* <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" /> */}
+            {/* <DaysICode /> */}
             <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+
             <Skills />
             <hr className="h-px mx-auto mt-[2rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
             <Projects />
