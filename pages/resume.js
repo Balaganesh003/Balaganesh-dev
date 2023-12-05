@@ -7,11 +7,35 @@ import ResumeDownload from '@/components/ResumeDownload';
 
 const Resume = () => {
   const [scale, setScale] = useState(1);
+  const [width, setWidth] = useState(786);
+  const [isScrolledFull, setIsScrolledFull] = useState(false);
+  const [isStickyNav, setIsStickyNav] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate the distance from the bottom of the document
+      const distanceFromBottom =
+        Math.ceil(window.innerHeight + window.scrollY) -
+        document.documentElement.scrollHeight;
+
+      // Check if the user is within 40px of the bottom
+      const isNearBottom =
+        width >= 786 ? distanceFromBottom >= -64 : distanceFromBottom >= -193;
+      setIsScrolledFull(isNearBottom);
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       const baseWidth = 786; // Base width for scale 1
+      setWidth(screenWidth);
       const scaleFactor = screenWidth / baseWidth;
 
       // Set the scale, limiting to a maximum of 1.5 and a minimum of 0.5
@@ -28,21 +52,39 @@ const Resume = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 96) {
+        setIsStickyNav(true);
+      } else {
+        setIsStickyNav(false);
+      }
+    });
+  }, []);
+
   return (
-    <div className="flex flex-col justify-center items-center bg-primary overflow-x-hidden gap-6 pt-8">
+    <div
+      className={`flex flex-col text-white md:min-h-screen items-center justify-start bg-primary overflow-x-hidden overflow-y-hidden pb-10 gap-6 pt-8 relative ${
+        isStickyNav && 'mt-[5rem]'
+      }`}>
       <h1 className="text-xl md:text-4xl uppercase text-center text-white">
         Resume
       </h1>
       <Document
         file={'./Balaganesh-resume.pdf'}
-        className={'overflow-y-hidden overflow-x-hidden'}>
+        className={'overflow-x-hidden overflow-y-hidden relative'}>
         <Page
           pageNumber={1}
           renderMode="canvas"
           scale={scale} // Dynamic scale
         />
       </Document>
-      <div className="fixed bottom-10 left-1/2 -translate-x-1/2 shadow-lg z-[10]">
+      <div
+        className={`${
+          isScrolledFull
+            ? 'absolute md:bottom-5 bottom-[1rem]'
+            : 'fixed bottom-10'
+        }  left-1/2 -translate-x-1/2 shadow-lg z-[10]`}>
         <ResumeDownload />
       </div>
     </div>

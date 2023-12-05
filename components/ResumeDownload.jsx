@@ -5,7 +5,7 @@ const ResumeDownload = () => {
   return (
     <button
       type="button"
-      className="active:scale-90 shadow-lg hover:scale-105 transition-all duration-200 hover:bg-primary hover:border-primary bg-HeadingBlue text-[1.1rem] border-2 text-primary hover:text-HeadingBlue border-HeadingBlue rounded-md tracking-wide flex gap-2 items-center px-8 py-2 md:py-2 md:px-5 cursor-pointer group whitespace-nowrap">
+      className="active:scale-90  shadow-lg hover:scale-110 transition-all duration-200   bg-HeadingBlue text-base md:text-[1.1rem] border-2 text-primary  border-HeadingBlue rounded-md tracking-wide flex gap-2 items-center px-3 py-1 sm:py-2 sm:px-5 cursor-pointer group whitespace-nowrap">
       <a href="./Balaganesh-resume.pdf" target="_blank" download>
         Download CV
       </a>
