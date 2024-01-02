@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 
 const categoryVariants = {
   python: 'python',
-  WebApp: 'webApp',
-  WebPage: 'webPage',
+  WebApp: 'WebApp',
+  WebPage: 'WebPage',
 };
 
 const ProjectContainer = () => {
