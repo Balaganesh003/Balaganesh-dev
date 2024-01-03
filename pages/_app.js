@@ -7,6 +7,8 @@ import ScrollToTop from '@/components/ScrollToTop';
 import { Provider } from 'react-redux';
 import store from '../store';
 import { AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -19,6 +21,8 @@ export default function App({ Component, pageProps }) {
       <MailSideBar />
       <Footer />
       <ScrollToTop />
+      <SpeedInsights />
+      <Analytics />
     </Provider>
   );
 }
