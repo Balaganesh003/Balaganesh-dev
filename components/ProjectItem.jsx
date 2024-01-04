@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import Spinner from './Spinner';
 
 const ProjectItem = ({ project, index }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <div
       className={`flex max-w-sm md:max-w-none  first:mt-[3rem] md:first:mt-[5rem] mt-[5rem] flex-col ${
         index % 2 == 0 ? 'md:flex-row-reverse' : 'md:flex-row'
       } border-gray-800 border shadow-lg md:border-none md:shadow-none rounded-lg px-5  py-5 lg:px-0 lg:py-0  gap-10`}>
-      <div className=" max-w-md  md:flex-1 ">
+      <div className="max-w-md md:flex-1">
+        {!imageLoaded && <Spinner />}
         <Image
           className="rounded-lg mt-5 lg:h-[14rem] object-cover w-full"
           width={400}
           height={300}
           src={project.imageUrl}
           alt={project.title}
+          onLoad={() => setImageLoaded(true)}
         />
       </div>
       <div className="max-w-md  flex-1">

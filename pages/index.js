@@ -59,7 +59,7 @@ export default function Home({ projectsData }) {
       </Head>
 
       <main
-        className={`bg-primary h-full  flex flex-col   items-center  relative  text-white px-[1.5rem]   md:px-[3.5rem]`}>
+        className={`bg-primary h-full min-h-screen min-w-screen flex flex-col   items-center  relative  text-white px-[1.5rem]   md:px-[3.5rem]`}>
         {isLoading ? (
           <Spinner />
         ) : (
