@@ -59,12 +59,13 @@ export default function Home({ projectsData }) {
       </Head>
 
       <main
-        className={`bg-primary h-full min-h-screen min-w-screen flex flex-col   items-center  relative  text-white px-[1.5rem]   md:px-[3.5rem]`}>
+        className={`bg-primary h-full max-w-screen overflow-y-hidden flex flex-col   items-center  relative  text-white px-4 sm:px-[1.5rem]   md:px-[3.5rem]`}>
+
         {isLoading ? (
           <Spinner />
         ) : (
           <div
-            className={`md:px-[4.5rem]  transition-all duration-300 ease-in-out`}>
+            className={` md:px-[4.5rem]  transition-all duration-300 ease-in-out`}>
             <div
               className={`h-[calc(100dvh-5rem)] min-h-fit flex items-start xl:items-center xl:pb-[5rem] ${
                 isStickyNav && 'mt-[5rem]'
@@ -76,8 +77,10 @@ export default function Home({ projectsData }) {
 
             <AboutMe />
 
-            {/* <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" /> */}
-            {/* <DaysICode /> */}
+            <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
+
+            <DaysICode />
+
             <hr className="h-px mx-auto mt-[7rem]  bg-gray-100 border-0 rounded  dark:bg-gray-700" />
 
             <Skills />

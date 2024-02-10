@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectItemCard from './ProjectItemCard';
 import { useSelector } from 'react-redux';
 
@@ -8,28 +8,35 @@ const categoryVariants = {
   WebPage: 'WebPage',
 };
 
+
 const ProjectContainer = () => {
   const { projects, selectedCategory } = useSelector((state) => state.projects);
+  const [filteredProjects, setFilteredProjects] = useState([]);
+  const [animationKey, setAnimationKey] = useState(Date.now());
+
+  useEffect(() => {
+    const filtered = projects.filter(
+      (project) =>
+        project.categories[0].title === selectedCategory ||
+        selectedCategory === 'All'
+    );
+    setFilteredProjects(filtered);
+    setAnimationKey(Date.now());
+  }, [projects, selectedCategory]);
 
   return (
-    <div className="mt-10 gap-x-8 gap-y-5 xl:gap-x-16 xl:gap-y-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {projects?.length !== 0 &&
-        projects &&
-        projects
-          .filter(
-            (project) =>
-              project.categories[0].title ===
-                categoryVariants[selectedCategory] || selectedCategory === 'All'
-          )
-          .map(({ title, imageUrl, description, githubLink }, i) => (
-            <ProjectItemCard
-              key={i * 99}
-              title={title}
-              imageUrl={imageUrl}
-              description={description}
-              githubLink={githubLink}
-            />
-          ))}
+    <div
+      key={animationKey}
+      className="mt-10 gap-x-8 gap-y-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {filteredProjects.map((project) => (
+        <ProjectItemCard
+          key={project.id}
+          title={project.title}
+          imageUrl={project.imageUrl}
+          description={project.description}
+          githubLink={project.githubLink}
+        />
+      ))}
     </div>
   );
 };
