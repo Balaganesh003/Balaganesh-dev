@@ -4,12 +4,14 @@ import ContactSvg from '../public/contact-svg.svg';
 import toast, { Toaster } from 'react-hot-toast';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
+import Spinner from '@/components/Spinner';
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isStickyNav, setIsStickyNav] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const form = useRef();
 
   useEffect(() => {
@@ -107,7 +109,12 @@ const Contact = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
           className="md:flex hidden flex-1 items-center justify-center">
-          <Image src={ContactSvg} alt="contactsvg" />
+          {!isImageLoaded && <Spinner />}
+          <Image
+            src={ContactSvg}
+            alt="contactsvg"
+            onLoad={() => setIsImageLoaded(true)}
+          />
         </motion.div>
       </div>
     </div>

@@ -2,6 +2,13 @@ import React, { useEffect, useState } from 'react';
 import ProjectItemCard from './ProjectItemCard';
 import { useSelector } from 'react-redux';
 
+const categoryVariants = {
+  python: 'python',
+  WebApp: 'WebApp',
+  WebPage: 'WebPage',
+};
+
+
 const ProjectContainer = () => {
   const { projects, selectedCategory } = useSelector((state) => state.projects);
   const [filteredProjects, setFilteredProjects] = useState([]);
