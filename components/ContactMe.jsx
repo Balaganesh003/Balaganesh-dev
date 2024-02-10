@@ -3,7 +3,9 @@ import React from 'react';
 
 const ContactMe = () => {
   return (
-    <div id="contact-section" className="flex flex-col items-center py-5">
+    <div
+      id="contact-section"
+      className="flex flex-col max-w-screen overflow-x-auto scrollbar-hide items-center py-5">
       <h1 className="text-center text-[2.5rem] font-semibold md:font-normal md:text-[3.4rem] mb-5 md:mb-2">
         Get In Touch
       </h1>

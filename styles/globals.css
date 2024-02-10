@@ -1,9 +1,17 @@
+/* Reset and Basic Styles */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   scrollbar-width: thin;
-  scrollbar-color: hsl(249, 3%, 46%);
+  scrollbar-color: #636e8b #0c1324; /* Adjusted for Firefox */
+}
+
+body {
+  background-color: #0c1324;
+  font-family: 'apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 div,
@@ -12,29 +20,33 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-@tailwind base;
-
 html {
   scroll-behavior: smooth;
-  font-family: 'apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
 }
 
-/* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 8px;
+  width: 8px; /* Adjust scrollbar width */
 }
 
 *::-webkit-scrollbar-track {
-  background: #0c1324;
+  background: #0c1324; /* Track color */
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #636e8b5b;
-  border-radius: 14px;
+  background-color: #636e8b; /* Thumb color */
+  border-radius: 14px !important; /* Ensuring rounded edges */
 }
 
-@tailwind components;
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
 
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
