@@ -1,10 +1,10 @@
 /* Reset and Basic Styles */
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
-  scrollbar-width: thin;
-  scrollbar-color: #636e8b #0c1324; /* Adjusted for Firefox */
+  padding: 0;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #636e8b #0c1324; /* For Firefox */
 }
 
 body {
@@ -24,19 +24,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom Scrollbar for Webkit (Chrome, Safari, newer versions of Opera) */
 *::-webkit-scrollbar {
-  width: 8px; /* Adjust scrollbar width */
+  width: 8px; /* Width of the scrollbar */
 }
 
 *::-webkit-scrollbar-track {
-  background: #0c1324; /* Track color */
+  background: #0c1324; /* Color of the track */
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #636e8b; /* Thumb color */
-  border-radius: 14px !important; /* Ensuring rounded edges */
+  background-color: #636e8b; /* Color of the scrollbar thumb */
+  border-radius: 14px !important; /* Rounded corners on the scrollbar thumb */
 }
 
+/* Hide Scrollbar for Webkit browsers, when needed */
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
