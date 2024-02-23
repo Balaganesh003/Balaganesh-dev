@@ -14,8 +14,8 @@ const AboutMe = () => {
         <h1 className="uppercase  text-HeadingGray text-xl text-center mb-10  duration-200 transition-all cursor-pointer hover:text-gray-200  ">
           About Me
         </h1>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 ">
-          <div className="flex-1 max-w-sm mx-auto flex">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 max-w-fit mx-auto">
+          <div className="flex-1 max-w-lg mx-auto flex">
             <div className="lg:w-[25rem] max-w-lg p-4">
               <Image
                 src="/balaganesh-dev-1.webp"
@@ -26,7 +26,7 @@ const AboutMe = () => {
               />
             </div>
           </div>
-          <div className="flex-1 max-w-lg">
+          <div className="flex-1 max-w-lg mr-auto">
             <h1 className="text-transparent text-[2.4rem] lg:text-[3rem] bg-clip-text bg-gradient-to-r from-purple-300 to-secondaryPurple">
               I&rsquo;m Balaganesh
             </h1>

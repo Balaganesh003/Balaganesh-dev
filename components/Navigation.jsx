@@ -38,9 +38,9 @@ const Navigation = () => {
   return (
     <div className="bg-primary w-full text-white">
       <div
-        className={`hidden md:flex items-center justify-between h-[5rem] bg-primary transition-transform duration-200 md:px-[3.5rem]   ${
+        className={`hidden md:flex items-center justify-between h-[5rem] bg-primary  md:px-[3.5rem]   ${
           isSticky &&
-          'shadow-2xl fixed inset-x-0 top-0  z-50 bg-primary/50 backdrop-blur-md'
+          'shadow-2xl fixed inset-x-0  top-0  z-50 bg-primary/50 backdrop-blur-md'
         }`}>
         {/* Desktop */}
         <div className="cursor-pointer active:scale-90 duration-200">
