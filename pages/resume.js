@@ -1,5 +1,6 @@
 import { pdfjs, Document, Page } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 import { useState, useEffect } from 'react';
 import 'react-pdf/dist/Page/TextLayer.css';
 import ResumeDownload from '@/components/ResumeDownload';
@@ -13,43 +14,53 @@ const Resume = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Calculate the distance from the bottom of the document
       const distanceFromBottom =
         Math.ceil(window.innerHeight + window.scrollY) -
         document.documentElement.scrollHeight;
+
+      // Check if the user is within 40px of the bottom
       const isNearBottom =
         width >= 786 ? distanceFromBottom >= -64 : distanceFromBottom >= -193;
       setIsScrolledFull(isNearBottom);
     };
 
+    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
 
+    // Cleanup
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
-      const baseWidth = 786;
+      const baseWidth = 786; // Base width for scale 1
       setWidth(screenWidth);
       const scaleFactor = screenWidth / baseWidth;
+
+      // Set the scale, limiting to a maximum of 1.5 and a minimum of 0.5
       setScale(Math.min(Math.max(scaleFactor, 0.5), 1.5));
     };
 
+    // Set the initial scale
     handleResize();
 
+    // Add event listener
     window.addEventListener('resize', handleResize);
 
+    // Cleanup
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsStickyNav(window.scrollY > 96);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 96) {
+        setIsStickyNav(true);
+      } else {
+        setIsStickyNav(false);
+      }
+    });
   }, []);
 
   const onDocumentLoadSuccess = ({ numPages }) => {
@@ -82,7 +93,7 @@ const Resume = () => {
           isScrolledFull
             ? 'absolute md:bottom-5 bottom-[1rem]'
             : 'fixed bottom-10'
-        } left-1/2 -translate-x-1/2 shadow-lg z-[10]`}>
+        }  left-1/2 -translate-x-1/2 shadow-lg z-[10]`}>
         <ResumeDownload />
       </div>
     </div>
