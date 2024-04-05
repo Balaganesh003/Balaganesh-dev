@@ -109,7 +109,11 @@ const Contact = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
           className="md:flex hidden flex-1 items-center justify-center">
-          {!isImageLoaded && <Spinner />}
+          {!isImageLoaded && (
+            <div className="flex justify-center items-center">
+              <Spinner />
+            </div>
+          )}
           <Image
             src={ContactSvg}
             alt="contactsvg"

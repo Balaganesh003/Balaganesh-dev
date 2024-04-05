@@ -66,7 +66,7 @@ const SkillsData = [
 
 const Skills = () => {
   return (
-    <div id="skills-section" className="py-[7rem]">
+    <div id="skills-section" className="py-[7rem] max-w-5xl mx-auto">
       <div
         data-aos="fade-up"
         data-aos-duration="1150"
