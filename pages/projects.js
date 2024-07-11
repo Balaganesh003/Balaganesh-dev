@@ -48,7 +48,7 @@ const Projects = ({ projectsData }) => {
         <Spinner />
       ) : (
         <div
-          className={`bg-primary min-h-screen overflow-hidden px-[1.5rem] md:px-[7rem] xl:px-[10rem] text-white ${
+          className={`bg-primary pb-5 min-h-screen overflow-hidden px-[1.5rem] md:px-[7rem] xl:px-[10rem] text-white ${
             isStickyNav && 'mt-[5rem]'
           } `}>
           <h1 className="text-4xl uppercase text-center py-5 pb-10">
