@@ -26,7 +26,7 @@ const Projects = ({ projectsData }) => {
       dispatch(projectActions.setProjects(projectsData));
       dispatch(projectActions.setLoadingStatus(false));
     }
-  }, [projectsData]);
+  }, [dispatch, projects, projectsData]);
 
   const handleCategory = (category) => {
     dispatch(projectActions.setCategory(category));

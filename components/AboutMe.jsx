@@ -23,6 +23,9 @@ const AboutMe = () => {
                 height={500}
                 alt="My Logo"
                 className="rounded-lg"
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
               />
             </div>
           </div>

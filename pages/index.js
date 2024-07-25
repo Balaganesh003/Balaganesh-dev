@@ -3,21 +3,24 @@ import 'aos/dist/aos.css';
 import Head from 'next/head';
 import Header from '@/components/Header';
 import { useEffect, useState } from 'react';
-import AboutMe from '@/components/AboutMe';
-import Skills from '@/components/Skills';
-import Projects from '@/components/Projects';
-import ContactMe from '@/components/ContactMe';
 import { fetchProjectsData } from '@/utils/FetchProjectData';
 import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '@/components/Spinner';
 import { projectActions } from '@/store/project-slice';
-import DaysICode from '@/components/DaysICode';
+
+import dynamic from 'next/dynamic';
+
+const DynamicAboutMe = dynamic(() => import('@/components/AboutMe'));
+const DynamicSkills = dynamic(() => import('@/components/Skills'));
+const DynamicProjects = dynamic(() => import('@/components/Projects'));
+const DynamicContactMe = dynamic(() => import('@/components/ContactMe'));
+const DynamicDaysICode = dynamic(() => import('@/components/DaysICode'));
 
 export async function getStaticProps() {
   const projectsData = await fetchProjectsData();
-
   return {
     props: { projectsData },
+    revalidate: 3600, // Revalidate every hour
   };
 }
 
@@ -61,20 +64,30 @@ export default function Home({ projectsData }) {
           property="og:description"
           content="Discover the innovative and user-centric web development projects by Balaganesh. Dive into my portfolio now."
         />
-        <meta property="og:image" content="../public/balaganesh-dev-1.webp" />
+        <meta
+          property="og:image"
+          content="https://balaganesh-dev.vercel.app/balaganesh-dev-1.webp"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://balaganesh-dev.vercel.app/" />
+        <link rel="canonical" href="https://balaganesh-dev.vercel.app/" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'http://schema.org',
             '@type': 'Person',
             name: 'Balaganesh',
             url: 'https://balaganesh-dev.vercel.app/',
-            image: '../public/balaganesh-dev-1.webp',
+            image: 'https://balaganesh-dev.vercel.app/balaganesh-dev-1.webp',
             sameAs: [
-              'https://twitter.com/balaganesh_003', // Replace with your Twitter profile
-              'https://www.linkedin.com/in/balaganesh-k/', // Replace with your LinkedIn profile
+              'https://twitter.com/balaganesh_003',
+              'https://www.linkedin.com/in/balaganesh-k/',
+              'https://github.com/Balaganesh003',
             ],
+            jobTitle: 'Frontend Developer',
+            worksFor: {
+              '@type': 'Organization',
+              name: 'Freelance',
+            },
           })}
         </script>
       </Head>
@@ -93,15 +106,15 @@ export default function Home({ projectsData }) {
               <Header />
             </div>
             <hr className="h-px mx-auto my-[2rem] bg-gray-100 border-0 rounded dark:bg-gray-700" />
-            <AboutMe />
+            <DynamicAboutMe />
             <hr className="h-px mx-auto mt-[7rem] bg-gray-100 border-0 rounded dark:bg-gray-700" />
-            <DaysICode />
+            <DynamicDaysICode />
             <hr className="h-px mx-auto mt-[7rem] bg-gray-100 border-0 rounded dark:bg-gray-700" />
-            <Skills />
+            <DynamicSkills />
             <hr className="h-px mx-auto mt-[2rem] bg-gray-100 border-0 rounded dark:bg-gray-700" />
-            <Projects />
+            <DynamicProjects />
             <hr className="h-px mx-auto mt-[9rem] mb-[5rem] bg-gray-100 border-0 rounded dark:bg-gray-700" />
-            <ContactMe />
+            <DynamicContactMe />
           </div>
         )}
       </main>
