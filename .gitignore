@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+/get_code_context.sh
+/code_context.txt
+
 # next.js
 /.next/
 /out/

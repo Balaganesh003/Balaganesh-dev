@@ -12,7 +12,7 @@ const DaysICode = () => {
         Days I code
       </h1>
       <div className="w-[90vw] md:w-[70vw] lg:w-[72vw] md:px-[1.5rem] overflow-x-hidden scrollbar-hidden">
-        <div className="scrollbar-hidden scrollbar-hide w-fit mx-auto">
+        <div className="scrollbar-hidden scrollbar-hide w-full mx-auto">
           <GitHubCalendar
             username="Balaganesh003"
             colorScheme="dark"

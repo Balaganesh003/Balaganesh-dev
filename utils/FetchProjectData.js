@@ -1,8 +1,15 @@
-export const fetchProjectsData = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/fetchProjects`
-  );
-  const data = await res.json();
+// File: utils/FetchProjectData.js
 
-  return data;
+export const fetchProjectsData = async () => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/fetchProjects`
+    );
+    if (!res.ok) throw new Error('Failed to fetch projects');
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+    return [];
+  }
 };

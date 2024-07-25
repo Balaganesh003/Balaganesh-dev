@@ -23,6 +23,7 @@ const AboutMe = () => {
                 height={500}
                 alt="My Logo"
                 className="rounded-lg"
+                loading="lazy"
               />
             </div>
           </div>
