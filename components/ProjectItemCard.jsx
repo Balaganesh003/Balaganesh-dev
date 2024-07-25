@@ -15,8 +15,6 @@ const ProjectItemCard = React.memo(
               objectFit="cover"
               className="rounded-lg"
               loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
             />
           </div>
           <h2 className="text-2xl font-bold text-center py-2">{title}</h2>
